@@ -4,7 +4,7 @@ title: Contact
 
 L’association l’œil à l’écoute n’est plus active depuis décembre 2023, pour accéder à l’intégralité de ses archives sonores, contactez :
 
-[loeilalecoute@gmail.com](loeilalecoute@gmail.com)
+loeilalecoute@gmail.com
 
 **Guillaume Mahe** : 06 72 61 25 64
 

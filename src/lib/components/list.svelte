@@ -62,7 +62,7 @@
 			class="origin-left text-left text-6xl font-semibold text-gray-50 transition-colors"
 			class:active={current === code}
 		>
-			<a href="{base}/projets{name}" class="block">
+			<a href="#" class="block">
 				{name}
 			</a>
 		</li>
