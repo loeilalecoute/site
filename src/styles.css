@@ -1,3 +1,19 @@
+@font-face {
+	font-family: Frequenz;
+	src: url('/fonts/frequenz/FrequenzTrial-Regular.ttf') format('trueType');
+	font-weight: 400;
+}
+@font-face {
+	font-family: Frequenz;
+	src: url('/fonts/frequenz/FrequenzTrial-Medium.ttf') format('trueType');
+	font-weight: 600;
+}
+@font-face {
+	font-family: Frequenz;
+	src: url('/fonts/frequenz/FrequenzTrial-Bold.ttf') format('trueType');
+	font-weight: 800;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

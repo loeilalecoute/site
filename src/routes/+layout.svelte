@@ -1,6 +1,6 @@
 <script>
-	import '../styles.css';
-	import { base } from '$app/paths';
+	import '../styles.css'
+	import { base } from '$app/paths'
 </script>
 
 <main>
