@@ -1,6 +1,4 @@
 <script>
-	import Map from '../map.svelte'
-
 	/**@type{string}*/
 	export let code
 	/**@type{string}*/
@@ -12,40 +10,15 @@
 	let element
 
 	/**@type {number}*/
-	let center
-	/**@type {number}*/
 	let height
-	/**@type {number}*/
-	let diff
 
-	/**@type {number}*/
-	let scrollY
 	/**@type {number}*/
 	let innerHeight
 
-	$: {
-		center = element?.offsetTop + height * 0.5 - scrollY
-		const halfScreeen = innerHeight * 0.5
-		diff = (halfScreeen - center) / halfScreeen
-	}
-
-	$: {
-	}
-	// document.addEventListener('scroll', () => {
-	// 	for (const el of items) {
-	// 		const { top, height } = el.getBoundingClientRect()
-	// 		const center = top + height / 2
-	// 		const halfScreeen = window.innerHeight / 2
-	// 		const diff = (halfScreeen - center) / halfScreeen
-	// 		const absDiff = Math.abs(diff)
-
-	// 		el.style.setProperty('--diff', diff.toString())
-	// 		el.style.setProperty('--abs-diff', absDiff.toString())
-	// 	}
-	// })
+	let rect
 </script>
 
-<svelte:window bind:scrollY bind:innerHeight />
+<svelte:window bind:innerHeight />
 
 <li
 	data-code={code}
@@ -54,7 +27,7 @@
 	data-current={current}
 	bind:this={element}
 	bind:clientHeight={height}
-	style="--diff:{diff};--abs-diff:{Math.abs(diff)}"
+	style="--top:{element?.offsetTop};--height:{height}; --half:{innerHeight * 0.5}"
 >
 	<a href="#" class="block">
 		{name}
@@ -63,8 +36,12 @@
 
 <style lang="postcss">
 	li {
+		--center: calc(var(--top) + var(--height) * 0.5 - var(--scrolly));
+		--diff: calc((var(--half) - var(--center)) / var(--half));
+		--abs-diff: max(var(--diff), -1 * var(--diff));
 		opacity: calc(1 - var(--abs-diff) * 0.6);
 		transform: scale(calc(0.4 + (1 - var(--abs-diff)) * 0.6));
+		will-change: transform;
 	}
 	li.active {
 		color: theme(colors.yellow);
