@@ -29,7 +29,7 @@
 	bind:clientHeight={height}
 	style="--top:{element?.offsetTop};--height:{height}; --half:{innerHeight * 0.5}"
 >
-	<a href="#" class="block">
+	<a href="#" class="inline-block hover:text-yellow hover:opacity-100">
 		{name}
 	</a>
 </li>
@@ -39,12 +39,20 @@
 		--center: calc(var(--top) + var(--height) * 0.5 - var(--scrolly));
 		--diff: calc((var(--half) - var(--center)) / var(--half));
 		--abs-diff: max(var(--diff), -1 * var(--diff));
-		opacity: calc(1 - var(--abs-diff) * 0.6);
 		transform: scale(calc(0.4 + (1 - var(--abs-diff)) * 0.6));
 		will-change: transform;
 	}
+	li a {
+		opacity: calc(1 - var(--abs-diff) * 0.6);
+	}
 	li.active {
 		color: theme(colors.yellow);
+	}
+
+	li.active a {
+		opacity: 1;
+	}
+	li a:hover {
 		opacity: 1;
 	}
 </style>

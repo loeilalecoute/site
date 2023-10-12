@@ -47,12 +47,12 @@
 <style lang="postcss">
 	#logo-ear {
 		stroke-dasharray: 240;
-		stroke-dashoffset: -240;
-		animation: dash 800ms both 300ms;
+		stroke-dashoffset: 240;
+		animation: dash-ear 800ms both 600ms;
 		animation-timing-function: theme(transitionTimingFunction.ease-out-3);
 	}
 	#logo-line-1 {
-		--path-length: 18;
+		--path-length: 20;
 	}
 	#logo-line-2 {
 		--path-length: 20;
@@ -64,20 +64,20 @@
 	#logo-line-2,
 	#logo-line-3 {
 		stroke-dasharray: var(--path-length);
-		stroke-dashoffset: calc(-1 * var(--path-length));
-		animation: dash 200ms forwards 600ms;
+		stroke-dashoffset: calc(var(--path-length));
+		animation: dash-line 200ms forwards 300ms;
 		animation-timing-function: theme(transitionTimingFunction.ease-out-3);
 	}
 	#logo-l,
 	#logo-o,
 	#logo-l2,
 	#logo-e {
-		animation: fall 300ms both;
+		animation: blop 300ms both;
 		animation-timing-function: theme(transitionTimingFunction.ease-elastic-out-2);
 		transform-origin: center;
 	}
 	#logo-o {
-		animation-delay: 50mx;
+		animation-delay: 50ms;
 	}
 	#logo-l2 {
 		animation-delay: 75ms;
@@ -86,7 +86,7 @@
 		animation-delay: 100ms;
 	}
 
-	@keyframes fall {
+	@keyframes blop {
 		0% {
 			transform: scale(0);
 		}
@@ -96,9 +96,15 @@
 		}
 	}
 
-	@keyframes dash {
+	@keyframes dash-ear {
 		to {
-			stroke-dashoffset: 0;
+			stroke-dashoffset: 480;
+		}
+	}
+
+	@keyframes dash-line {
+		to {
+			stroke-dashoffset: 40;
 		}
 	}
 </style>

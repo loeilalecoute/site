@@ -29,7 +29,7 @@
 	.with-anim {
 		animation: slide-in 300ms both;
 		animation-timing-function: theme(transitionTimingFunction.ease-out-1);
-		animation-delay: calc(var(--_index) * 50ms);
+		animation-delay: calc(var(--_index) * 50ms + 600ms);
 	}
 	@keyframes slide-in {
 		from {
