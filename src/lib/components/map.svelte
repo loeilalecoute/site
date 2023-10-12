@@ -6,7 +6,7 @@
 
 	let ready = false
 	let drawn = false
-	export let current: string
+	export let selected: string
 
 	let element: SVGSVGElement
 
@@ -59,7 +59,7 @@
 		{/if}
 		<path
 			class="stroke-blue stroke-[2] transition-opacity duration-500 fill-[url(#pattern)]"
-			class:opacity-0={current !== code || !drawn}
+			class:opacity-0={selected !== code || !drawn}
 			d={path(points)}
 			stroke-linejoin="round"
 		/>
