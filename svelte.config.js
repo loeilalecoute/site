@@ -1,6 +1,6 @@
-import adapter from '@sveltejs/adapter-static';
-import { vitePreprocess } from '@sveltejs/kit/vite';
-import { mdsvex } from 'mdsvex';
+import adapter from '@sveltejs/adapter-static'
+import { vitePreprocess } from '@sveltejs/kit/vite'
+import { mdsvex } from 'mdsvex'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,7 +11,7 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/asso-lol' : ''
+			base: process.env.NODE_ENV === 'production' ? '/lole' : ''
 		}
 	},
 	preprocess: [
@@ -21,6 +21,6 @@ const config = {
 			layout: 'src/lib/components/article.svelte'
 		})
 	]
-};
+}
 
-export default config;
+export default config
