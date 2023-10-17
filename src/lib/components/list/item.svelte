@@ -38,7 +38,7 @@
 	style="--top:{element?.offsetTop};--height:{height}; --half:{innerHeight * 0.5}"
 >
 	<a
-		href="#"
+		href="/projets/aubervilliers"
 		class="inline-block hover:text-yellow hover:opacity-100"
 		on:mouseenter={select}
 		on:mouseleave={unSelect}
