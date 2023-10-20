@@ -72,7 +72,7 @@
 	#logo-o,
 	#logo-l2,
 	#logo-e {
-		animation: blop 300ms both;
+		animation: fall 300ms both;
 		animation-timing-function: theme(transitionTimingFunction.ease-elastic-out-2);
 		transform-origin: center;
 	}
@@ -85,14 +85,13 @@
 	#logo-e {
 		animation-delay: 100ms;
 	}
-
-	@keyframes blop {
+	@keyframes fall {
 		0% {
-			transform: scale(0);
+			transform: translateY(-100%) scale(0);
 		}
 
 		100% {
-			transform: scale(1);
+			transform: translateY(0) scale(1);
 		}
 	}
 
