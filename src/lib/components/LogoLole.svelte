@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="svg1" version="1.1" viewBox="0 0 216.83 156.63">
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	id="svg1"
+	version="1.1"
+	viewBox="0 0 216.83 156.63"
+	class="max-w-sm mx-auto sm:max-w-none"
+>
 	<g stroke-linecap="round">
 		<path
 			id="logo-line-3"

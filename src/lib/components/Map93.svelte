@@ -29,7 +29,7 @@
 	role="figure"
 	viewBox={`0 0 500 500`}
 	class="max-h-full ml-auto"
-	use:intersectionObserver={{ once: true }}
+	use:intersectionObserver={{ once: true, threshold: 0.3 }}
 	on:screenEnter={onScreenEnter}
 >
 	{#each citys as { code, points }}
@@ -37,13 +37,13 @@
 			<path
 				in:draw={{ duration: 2000, easing: sineOut, delay: 300 }}
 				id={code}
-				class=" fill-transparent opacity-30 stroke-blue"
+				class=" fill-transparent stroke-blue/30"
 				d={path(points)}
 				stroke-linejoin="round"
 			/>
 		{/if}
 		<path
-			class="stroke-blue stroke-[2] transition-opacity duration-500 fill-blue"
+			class="stroke-blue/60 stroke-[2] transition-opacity duration-500 fill-blue/80"
 			class:opacity-0={selected !== code && draw}
 			d={path(points)}
 			stroke-linejoin="round"

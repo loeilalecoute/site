@@ -6,11 +6,11 @@
 
 <svelte:window bind:scrollY />
 <section
-	class=" container mx-auto px-8 grid sm:grid-cols-2 gap-10 md:gap-12 content-center min-h-screen justify items-center"
+	class="container mx-auto px-12 py-12 grid sm:grid-cols-2 gap-10 md:gap-12 content-center min-h-screen justify items-center"
 >
 	<LogoLole />
 	<p
-		class=" my-auto grid mb-auto leading-tight text-center sm:text-left text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold uppercase"
+		class=" my-auto grid mb-auto leading-tight text-center sm:text-left text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold uppercase"
 	>
 		<span class="block with-anim" style="--_index:0">2005 2023</span>
 		<span class="block with-anim" style="--_index:1">une mémoire</span>
