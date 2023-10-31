@@ -9,6 +9,11 @@
 
 	function handleClick() {
 		open = !open
+		if (open) {
+			document.documentElement.style.setProperty('overflow', 'hidden')
+		} else {
+			document.documentElement.style.removeProperty('overflow')
+		}
 	}
 
 	/**
