@@ -1,0 +1,24 @@
+<script>
+	import { citys } from '$lib/93.json'
+	import { onMount } from 'svelte'
+	import Map93 from './Map93.svelte'
+	import MainNavItem from './MainNavItem.svelte'
+
+	const items = citys.filter((c) => c.project)
+
+	/**@type {string|undefined}*/
+	let selected = undefined
+</script>
+
+<section class="container mx-auto">
+	<div class="h-screen sticky top-0 p-4 -z-10">
+		<Map93 {selected} />
+	</div>
+	<nav>
+		<ul class="space-y-[1em] md:space-y-0 pb-[100vh]">
+			{#each items as { name, code }}
+				<MainNavItem bind:selected {name} {code} />
+			{/each}
+		</ul>
+	</nav>
+</section>

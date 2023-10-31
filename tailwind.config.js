@@ -5,6 +5,12 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
+			height: {
+				screen: ['100svh', '100vh']
+			},
+			minHeight: {
+				screen: ['100svh', '100vh']
+			},
 			colors: {
 				blue: '#70c2c0',
 				yellow: '#FCCC03'
