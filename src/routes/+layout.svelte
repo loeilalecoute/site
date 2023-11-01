@@ -3,9 +3,7 @@
 	import '../styles.css'
 </script>
 
-<header class=" right items-center px-4 z-50 py-2 fixed w-full top-0">
-	<Hamburger />
-</header>
+<Hamburger />
 <main>
 	<slot />
 </main>

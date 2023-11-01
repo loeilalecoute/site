@@ -1,7 +1,6 @@
 <script>
-	import { intersectionObserver } from '$lib/actions/intersectionObserver.js'
-
-	/**code of the selected city
+	/**
+	 * code of the selected city
 	 * @type {string|undefined}
 	 */
 	export let selected
@@ -67,7 +66,7 @@
 
 <style lang="postcss">
 	a {
-		opacity: var(--factor);
+		opacity: calc(0.2 + 0.8 * var(--factor, 0));
 		transform: scale(calc(0.6 + 0.4 * var(--factor, 0)));
 	}
 </style>

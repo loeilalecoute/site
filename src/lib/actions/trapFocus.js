@@ -1,58 +1,35 @@
-/**@type {HTMLElement[]} */
-let trapFocusList = []
-
-if (typeof window !== 'undefined') {
+/**
+ * @type {import('svelte/action').Action<HTMLElement>}
+ */
+export const trapFocus = (node) => {
 	/**
-	 * @param {KeyboardEvent} event
+	 * @param {KeyboardEvent} e
 	 */
-	const isNext = (event) => event.keyCode === 9 && !event.shiftKey
-	/**
-	 * @param {KeyboardEvent} event
-	 */
-	const isPrevious = (event) => event.keyCode === 9 && event.shiftKey
-	/**
-	 * @param {KeyboardEvent} event
-	 */
-	const trapFocusListener = (event) => {
-		if (event.target === window) {
-			return
-		}
-
-		/**@type {HTMLElement} */
-		// @ts-ignore
-		const eventTarget = event.target
-
-		const parentNode = trapFocusList.find((node) => node.contains(eventTarget))
-		if (!parentNode) {
-			return
-		}
+	function handleKeyboard(e) {
+		const isNext = e.code === 'Tab' && !e.shiftKey
+		const isPrevious = e.code === 'Tab' && e.shiftKey
+		if (!isNext && !isPrevious) return
 
 		/**@type {NodeListOf<HTMLElement>} */
-		const focusable = parentNode.querySelectorAll(
+		const focusable = node.querySelectorAll(
 			'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]'
 		)
+		if (focusable.length <= 1) return
 		const first = focusable[0]
 		const last = focusable[focusable.length - 1]
-		if (isNext(event) && event.target === last) {
-			event.preventDefault()
+		if (isNext && e.target === last) {
+			e.preventDefault()
 			first.focus()
-		} else if (isPrevious(event) && event.target === first) {
-			event.preventDefault()
+		} else if (isPrevious && e.target === first) {
+			e.preventDefault()
 			last.focus()
 		}
 	}
+	node.addEventListener('keydown', handleKeyboard)
 
-	document.addEventListener('keydown', trapFocusListener)
-}
-
-/**
- * @param {HTMLElement} node
- */
-export const trapFocus = (node) => {
-	trapFocusList.push(node)
 	return {
 		destroy() {
-			trapFocusList = trapFocusList.filter((element) => element !== node)
+			node.removeEventListener('keydown', handleKeyboard)
 		}
 	}
 }

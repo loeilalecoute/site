@@ -6,7 +6,7 @@
 
 <svelte:window bind:scrollY />
 <section
-	class="container mx-auto px-12 py-12 grid sm:grid-cols-2 gap-10 md:gap-12 content-center min-h-screen justify items-center"
+	class="container mx-auto px-4 sm:px-12 py-12 grid sm:grid-cols-2 gap-10 md:gap-32 sm:justify-evenly min-h-screen items-center"
 >
 	<LogoLole />
 	<p
