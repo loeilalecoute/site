@@ -1,5 +1,7 @@
 ---
 title: Aubervilliers
+audios:
+  - /audios/alombredufort-9cube.mp3
 ---
 
 # Bonjour
