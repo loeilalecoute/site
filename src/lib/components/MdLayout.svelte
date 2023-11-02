@@ -1,6 +1,6 @@
 <script>
 	/**@type{string}*/
-	export let title;
+	export let title
 </script>
 
 <article class="prose mx-auto mt-16 prose-invert">

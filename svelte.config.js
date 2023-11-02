@@ -19,8 +19,8 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			layout: {
-				text: 'src/lib/components/article.svelte',
-				projets: 'src/lib/components/projetLayout.svelte'
+				text: 'src/lib/components/MdLayout.svelte',
+				projets: 'src/lib/components/ProjetLayout.svelte'
 			}
 		})
 	]
