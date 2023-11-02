@@ -55,6 +55,6 @@
 		</svg>
 	</a>
 	{#if current}
-		<span>En cours de lecture</span>
+		<span>En cours</span>
 	{/if}
 </div>

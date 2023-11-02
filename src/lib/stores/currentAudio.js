@@ -70,9 +70,11 @@ const defineAudioStore = () => {
 	 * @param {string} [emission]
 	 */
 	const loadAudio = (src, title, date, emission) => {
-		const audio = new Audio(base + src)
+		const audio = new Audio()
+		console.log(audio)
 		_isLoading.set(true)
 		_audioData.set({ src, title, date, emission })
+
 		audio.addEventListener('canplay', () => {
 			update((prev) => {
 				prev?.pause()
@@ -82,14 +84,14 @@ const defineAudioStore = () => {
 			audio.play()
 			_isLoading.set(false)
 		})
-		audio.addEventListener('pause', () => {
-			_isPlaying.pause()
-		})
-		audio.addEventListener('play', () => _isPlaying.play())
+		audio.addEventListener('pause', _isPlaying.pause)
+		audio.addEventListener('play', _isPlaying.play)
 
 		audio.addEventListener('timeupdate', () => {
 			_audioTime.updateCurrentTime(audio.currentTime)
 		})
+		audio.src = base + src
+		audio.load()
 	}
 
 	return { loadAudio, subscribe, set }
