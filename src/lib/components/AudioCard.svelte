@@ -36,7 +36,7 @@
 	}
 </script>
 
-<div class="flex gap-4 items-center">
+<div class="flex items-center gap-4">
 	<p class="text-xl">
 		<span>{title}</span> |
 		{#if emission}
@@ -45,12 +45,12 @@
 		<span>{date}</span>
 	</p>
 	<button
-		class="text-xl hover:text-yellow focus-visible:text-yellow transition-colors"
+		class="text-xl transition-colors hover:text-yellow focus-visible:text-yellow"
 		on:click={handleClick}
 		aria-label="écouter"><PlayIcon {state} /></button
 	>
 	<a
-		class="text-xl hover:text-yellow focus-visible:text-yellow transition-colors"
+		class="text-xl transition-colors hover:text-yellow focus-visible:text-yellow"
 		href={base + src}
 		download
 		aria-label="télécharger"

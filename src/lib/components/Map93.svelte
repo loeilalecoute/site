@@ -28,7 +28,7 @@
 <svg
 	role="figure"
 	viewBox={`0 0 500 500`}
-	class="max-h-full ml-auto"
+	class="ml-auto max-h-full"
 	use:intersectionObserver={{ once: true, threshold: 0.3 }}
 	on:screenEnter={onScreenEnter}
 >
@@ -43,7 +43,7 @@
 			/>
 		{/if}
 		<path
-			class="stroke-blue/60 stroke-[2] transition-opacity duration-500 fill-blue/80"
+			class="fill-blue/80 stroke-blue/60 stroke-[2] transition-opacity duration-500"
 			class:opacity-0={selected !== code && draw}
 			d={path(points)}
 			stroke-linejoin="round"

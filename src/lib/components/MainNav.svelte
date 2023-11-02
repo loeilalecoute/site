@@ -11,11 +11,11 @@
 </script>
 
 <section class="container mx-auto">
-	<div class="h-screen sticky top-0 p-4 -z-10 grid items-center">
+	<div class="sticky top-0 -z-10 grid h-screen items-center p-4">
 		<Map93 {selected} />
 	</div>
 	<nav id="projets">
-		<ul class="space-y-[1em] md:space-y-0 pb-[100vh] px-4">
+		<ul class="space-y-[1em] px-4 pb-[100vh] md:space-y-0">
 			{#each items as { name, code }}
 				<MainNavItem bind:selected {name} {code} href="{base}/projets/aubervilliers" />
 			{/each}

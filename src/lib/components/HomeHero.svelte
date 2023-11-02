@@ -6,23 +6,23 @@
 
 <svelte:window bind:scrollY />
 <section
-	class="container mx-auto px-4 sm:px-12 py-12 grid sm:grid-cols-2 gap-10 md:gap-32 sm:justify-evenly min-h-screen items-center"
+	class="container mx-auto grid min-h-screen items-center gap-10 px-4 py-12 sm:grid-cols-2 sm:justify-evenly sm:px-12 md:gap-32"
 >
 	<LogoLole />
 	<p
-		class=" my-auto grid mb-auto leading-tight text-center sm:text-left text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold uppercase"
+		class=" my-auto mb-auto grid text-center text-2xl font-semibold uppercase leading-tight sm:text-left lg:text-3xl xl:text-4xl 2xl:text-5xl"
 	>
-		<span class="block with-anim" style="--_index:0">2005 2023</span>
-		<span class="block with-anim" style="--_index:1">une mémoire</span>
-		<span class="block with-anim" style="--_index:2">radiophonique</span>
-		<span class="block with-anim" style="--_index:3">du 93</span>
+		<span class="with-anim block" style="--_index:0">2005 2023</span>
+		<span class="with-anim block" style="--_index:1">une mémoire</span>
+		<span class="with-anim block" style="--_index:2">radiophonique</span>
+		<span class="with-anim block" style="--_index:3">du 93</span>
 	</p>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
-		class="h-10 w-10 animate-bounce rounded-full border-current p-2 stroke-white fixed bottom-8 left-1/2 -translate-x-1/2 transition-opacity"
+		class="fixed bottom-8 left-1/2 h-10 w-10 -translate-x-1/2 animate-bounce rounded-full border-current stroke-white p-2 transition-opacity"
 		class:opacity-0={scrollY !== 0}
 		><path
 			stroke-linecap="round"

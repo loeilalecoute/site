@@ -55,7 +55,7 @@
 <li>
 	<a
 		{href}
-		class="item origin-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl inline-block hover:text-yellow hover:opacity-100 focus-visible:text-yellow focus-visible:opacity-100"
+		class="item inline-block origin-left text-2xl hover:text-yellow hover:opacity-100 focus-visible:text-yellow focus-visible:opacity-100 sm:text-3xl md:text-4xl lg:text-5xl"
 		on:mouseenter={() => select()}
 		on:focus={() => select()}
 		on:blur={() => unSselect()}

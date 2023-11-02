@@ -20,10 +20,10 @@
 	}
 </script>
 
-<div class="hidden md:flex items-center justify-end gap-1">
+<div class="hidden items-center justify-end gap-1 md:flex">
 	<button
 		on:click={handleClick}
-		class="hover:text-yellow focus-visible:text-yellow transition-colors text-lg"
+		class="text-lg transition-colors hover:text-yellow focus-visible:text-yellow"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@
 		max="1"
 		step="0.1"
 		value={$volume}
-		class="w-30 h-1 rounded-lg appearance-none cursor-pointer hidden lg:block"
+		class="w-30 hidden h-1 cursor-pointer appearance-none rounded-lg lg:block"
 		style="--left:{$volume * 100}%"
 		aria-label="timeline"
 		on:input={handleInput}

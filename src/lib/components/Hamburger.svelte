@@ -50,9 +50,9 @@
 
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 
-<nav class=" py-1 z-50 inline-flex fixed right-0 top-6" use:trapFocus on:keydown={handleKey}>
+<nav class=" fixed right-0 top-6 z-50 inline-flex py-1" use:trapFocus on:keydown={handleKey}>
 	<button
-		class="bg-gray-900/90 ml-auto py-2 pr-3 pl-4 rounded-l-full text-gray-300 hover:text-white focus-visible:hover:text-white transition-colors z-10 text-xl sm:text-2xl border border-gray-300/10 border-r-0 shadow"
+		class="z-10 ml-auto rounded-l-full border border-r-0 border-gray-300/10 bg-gray-900/90 py-2 pl-4 pr-3 text-xl text-gray-300 shadow transition-colors hover:text-white focus-visible:hover:text-white sm:text-2xl"
 		class:isOpen
 		on:click={handleClick}
 		aria-expanded={isOpen}
@@ -75,7 +75,7 @@
 	</button>
 	{#if isOpen}
 		<ul
-			class="fixed inset-0 bg-gray-900 text-3xl grid h-full place-content-center gap-4"
+			class="fixed inset-0 grid h-full place-content-center gap-4 bg-gray-900 text-3xl"
 			transition:slide
 		>
 			{#each links as { href, text }, index}
@@ -83,7 +83,7 @@
 					<a
 						href="{base}{href}"
 						style="--_index:{index};"
-						class="capitalize with-anim block hover:text-yellow focus-visible:text-yellow transition-colors"
+						class="with-anim block capitalize transition-colors hover:text-yellow focus-visible:text-yellow"
 						>{text}</a
 					>
 				</li>
@@ -110,7 +110,9 @@
 	}
 
 	button path {
-		transition: var(--duration) translate var(--duration), var(--duration) rotate 0s,
+		transition:
+			var(--duration) translate var(--duration),
+			var(--duration) rotate 0s,
 			0s opacity var(--duration);
 	}
 
@@ -129,7 +131,9 @@
 	}
 
 	.isOpen path {
-		transition: var(--duration) translate 0s, var(--duration) rotate var(--duration),
+		transition:
+			var(--duration) translate 0s,
+			var(--duration) rotate var(--duration),
 			0s opacity var(--duration);
 	}
 

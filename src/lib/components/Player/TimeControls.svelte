@@ -39,11 +39,11 @@
 	}
 </script>
 
-<div class=" sm:grid justify-items-center gap-0 text-center">
+<div class=" justify-items-center gap-0 text-center sm:grid">
 	<div>
-		<div class=" sm:flex gap-3">
+		<div class=" gap-3 sm:flex">
 			<button
-				class="text-lg p-1 hover:text-yellow focus-visible:text-yellow transition-colors disabled:text-gray-600 disabled:hover:text-gray-600 hidden sm:block"
+				class="hidden p-1 text-lg transition-colors hover:text-yellow focus-visible:text-yellow disabled:text-gray-600 disabled:hover:text-gray-600 sm:block"
 				{disabled}
 				on:click={prev}
 				aria-label="reculer dans l'audio"
@@ -65,7 +65,7 @@
 				</svg>
 			</button>
 			<button
-				class="p-1 hover:text-yellow focus-visible:text-yellow transition-colors disabled:text-gray-600 disabled:hover:text-gray-600 text-2xl"
+				class="p-1 text-2xl transition-colors hover:text-yellow focus-visible:text-yellow disabled:text-gray-600 disabled:hover:text-gray-600"
 				{disabled}
 				on:click={togglePlay}
 				aria-label={$isPlaying ? 'pause' : 'lire'}
@@ -74,7 +74,7 @@
 			</button>
 
 			<button
-				class="p-1 hover:text-yellow focus-visible:text-yellow transition-colors disabled:text-gray-600 disabled:hover:text-gray-600 text-lg hidden sm:block"
+				class="hidden p-1 text-lg transition-colors hover:text-yellow focus-visible:text-yellow disabled:text-gray-600 disabled:hover:text-gray-600 sm:block"
 				{disabled}
 				on:click={next}
 				aria-label="avancer dans l'audio"
@@ -97,14 +97,14 @@
 			</button>
 		</div>
 	</div>
-	<div class="sm:hidden text-sm whitespace-nowrap">
+	<div class="whitespace-nowrap text-sm sm:hidden">
 		<span class=" text-gray-300" aria-label="temps actuel"
 			>{formatDuration($audioTime.currentTime)}</span
 		>
 		/ <span class=" text-gray-300" aria-label="durée">{formatDuration($audioTime.duration)}</span>
 	</div>
 
-	<div class=" items-center gap-2 hidden sm:flex">
+	<div class=" hidden items-center gap-2 sm:flex">
 		<span class=" text-gray-300" aria-label="temps actuel"
 			>{formatDuration($audioTime.currentTime)}</span
 		>
@@ -114,7 +114,7 @@
 			min="0"
 			max="100"
 			value={now}
-			class="w-60 md:w-80 h-2 rounded-lg appearance-none cursor-pointer"
+			class="h-2 w-60 cursor-pointer appearance-none rounded-lg md:w-80"
 			style="--left:{now}%"
 			on:input={handleInput}
 			aria-label="timeline"

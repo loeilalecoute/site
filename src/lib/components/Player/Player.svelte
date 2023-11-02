@@ -7,11 +7,11 @@
 
 {#if $audioStore}
 	<div
-		class="backdrop-blur-sm fixed bottom-0 w-full gap-12 flex justify-between sm:grid sm:grid-cols-[1fr_auto_1fr] border-t z-40 bg-gray-950/60 py-4 items-center px-3 sm:px-6 border-gray-600/30"
+		class="fixed bottom-0 z-40 flex w-full items-center justify-between gap-12 border-t border-gray-600/30 bg-gray-950/60 px-3 py-4 backdrop-blur-sm sm:grid sm:grid-cols-[1fr_auto_1fr] sm:px-6"
 		transition:slide
 	>
 		<p class="grid">
-			<span class="sm:text-lg text-blue font-semibold whitespace-nowrap">{$audioData.title}</span>
+			<span class="whitespace-nowrap font-semibold text-blue sm:text-lg">{$audioData.title}</span>
 			<span>
 				{#if $audioData.emission}
 					{$audioData.emission},
