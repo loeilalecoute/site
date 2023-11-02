@@ -7,11 +7,11 @@
 
 {#if $audioStore}
 	<div
-		class="backdrop-blur-sm fixed bottom-0 w-full gap-12 flex justify-between sm:grid sm:grid-cols-[1fr_auto_1fr] border-t z-40 bg-gray-950/60 py-4 items-center px-6 border-gray-600/30"
+		class="backdrop-blur-sm fixed bottom-0 w-full gap-12 flex justify-between sm:grid sm:grid-cols-[1fr_auto_1fr] border-t z-40 bg-gray-950/60 py-4 items-center px-3 sm:px-6 border-gray-600/30"
 		transition:slide
 	>
 		<p class="grid">
-			<span class="text-lg text-blue font-semibold whitespace-nowrap">{$audioData.title}</span>
+			<span class="sm:text-lg text-blue font-semibold whitespace-nowrap">{$audioData.title}</span>
 			<span>
 				{#if $audioData.emission}
 					{$audioData.emission},
@@ -19,9 +19,7 @@
 				{$audioData.date}</span
 			>
 		</p>
-		<div class=" sm:grid justify-items-center gap-0">
-			<TimeControls />
-		</div>
+		<TimeControls />
 		<VolumeControl />
 	</div>
 {/if}
