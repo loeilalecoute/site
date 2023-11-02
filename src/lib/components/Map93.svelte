@@ -44,7 +44,7 @@
 		{/if}
 		<path
 			class="fill-blue/80 stroke-blue/60 stroke-[2] transition-opacity duration-500"
-			class:opacity-0={selected !== code && draw}
+			class:opacity-0={selected !== code && drawn}
 			d={path(points)}
 			stroke-linejoin="round"
 		/>

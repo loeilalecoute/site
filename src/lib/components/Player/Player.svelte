@@ -1,7 +1,7 @@
 <script>
+	import { audioData, audioStore } from '$lib/stores/currentAudio.js'
 	import { slide } from 'svelte/transition'
 	import TimeControls from './TimeControls.svelte'
-	import { audioData, audioStore, volume } from '$lib/stores/currentAudio.js'
 	import VolumeControl from './VolumeControl.svelte'
 </script>
 

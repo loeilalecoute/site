@@ -1,6 +1,4 @@
 <script>
-	import { base } from '$app/paths'
-	import { audioStore } from '$lib/stores/currentAudio.js'
 	import AudioCard from './AudioCard.svelte'
 
 	/**@type{string}*/
