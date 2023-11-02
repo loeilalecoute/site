@@ -12,7 +12,8 @@ export default {
 				screen: ['100svh', '100vh']
 			},
 			colors: {
-				blue: '#70c2c0',
+				// blue: '#70c2c0',
+				blue: '#87cccb',
 				yellow: '#FCCC03'
 			},
 			fontFamily: {

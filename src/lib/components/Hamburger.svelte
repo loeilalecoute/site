@@ -10,7 +10,7 @@
 	let buttonEl
 
 	let links = [
-		{ text: 'projets', href: '/#projets' },
+		{ text: 'Accueil', href: '/' },
 		{ text: 'présentation', href: '/presentation' },
 		{ text: 'ressources', href: '/ressources' },
 		{ text: 'portfolio', href: '/portfolio' },
@@ -50,9 +50,9 @@
 
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 
-<nav class="px-4 py-1 z-50 inline-flex fixed right-0 top-0" use:trapFocus on:keydown={handleKey}>
+<nav class=" py-1 z-50 inline-flex fixed right-0 top-6" use:trapFocus on:keydown={handleKey}>
 	<button
-		class=" ml-auto p-1 text-gray-400 hover:text-white focus-visible:hover:text-white transition-colors z-10 text-2xl sm:text-3xl"
+		class="bg-gray-900/90 ml-auto py-2 pr-3 pl-4 rounded-l-full text-gray-300 hover:text-white focus-visible:hover:text-white transition-colors z-10 text-xl sm:text-2xl border border-gray-300/10 border-r-0 shadow"
 		class:isOpen
 		on:click={handleClick}
 		aria-expanded={isOpen}
@@ -60,19 +60,17 @@
 		bind:this={buttonEl}
 	>
 		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke-width="1.5"
-			stroke="currentColor"
+			viewBox="-12 -12 24 24"
 			width="1em"
 			height="1em"
+			stroke="currentColor"
+			fill="none"
 			stroke-linecap="round"
-			stroke-linejoin="round"
+			stroke-width="1.2"
 		>
-			<line class="hamburger1" x1="2" y1="6" x2="22" y2="6" />
-			<line class="hamburger2" x1="2" y1="12" x2="22" y2="12" />
-			<line class="hamburger3" x1="2" y1="18" x2="22" y2="18" />
+			<path class="hamburger1" d="M-10 0 h 20" />
+			<path class="hamburger2" d="M-10 0 h 20" />
+			<path class="hamburger3" d="M-10 0 h 20" />
 		</svg>
 	</button>
 	{#if isOpen}
@@ -95,20 +93,49 @@
 </nav>
 
 <style lang="postcss">
-	line {
-		transform-origin: center;
+	button {
+		--duration: 0.3s;
 	}
-	line {
-		transition: transform 0.3s, opacity 0.2s;
+
+	button path:nth-child(1) {
+		translate: 0 -25%;
 	}
-	.isOpen .hamburger1 {
-		transform: rotate(45deg) translateY(25%);
+
+	button path:nth-child(2) {
+		opacity: 1;
 	}
-	.isOpen .hamburger2 {
+
+	button path:nth-child(3) {
+		translate: 0 25%;
+	}
+
+	button path {
+		transition: var(--duration) translate var(--duration), var(--duration) rotate 0s,
+			0s opacity var(--duration);
+	}
+
+	.isOpen path:nth-child(1) {
+		translate: 0 0;
+		rotate: -45deg;
+	}
+
+	.isOpen path:nth-child(2) {
 		opacity: 0;
 	}
-	.isOpen .hamburger3 {
-		transform: rotate(-45deg) translateY(-25%);
+
+	.isOpen path:nth-child(3) {
+		translate: 0 0;
+		rotate: 45deg;
+	}
+
+	.isOpen path {
+		transition: var(--duration) translate 0s, var(--duration) rotate var(--duration),
+			0s opacity var(--duration);
+	}
+
+	.isOpen svg {
+		rotate: 90deg;
+		transition: rotate var(--duration);
 	}
 
 	.with-anim {

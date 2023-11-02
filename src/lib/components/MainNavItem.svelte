@@ -11,6 +11,9 @@
 	/**@type {string}*/
 	export let name
 
+	/**@type {string}*/
+	export let href
+
 	/**@type {number}*/
 	let scrollY
 	/**@type {number}*/
@@ -51,7 +54,7 @@
 
 <li>
 	<a
-		href=""
+		{href}
 		class="item origin-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl inline-block hover:text-yellow hover:opacity-100 focus-visible:text-yellow focus-visible:opacity-100"
 		on:mouseenter={() => select()}
 		on:focus={() => select()}

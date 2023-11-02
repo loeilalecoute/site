@@ -40,11 +40,12 @@
 </script>
 
 <div>
-	<div class="flex gap-2">
+	<div class="flex gap-3">
 		<button
-			class="p-1 hover:text-yellow focus-visible:text-yellow transition-colors disabled:text-gray-600 disabled:hover:text-gray-600"
+			class="text-lg p-1 hover:text-yellow focus-visible:text-yellow transition-colors disabled:text-gray-600 disabled:hover:text-gray-600 hidden sm:block"
 			{disabled}
 			on:click={prev}
+			aria-label="reculer dans l'audio"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +53,8 @@
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-8 h-8"
+				width="1em"
+				height="1em"
 			>
 				<path
 					stroke-linecap="round"
@@ -62,17 +64,19 @@
 			</svg>
 		</button>
 		<button
-			class="p-1 hover:text-yellow focus-visible:text-yellow transition-colors disabled:text-gray-600 disabled:hover:text-gray-600"
+			class="p-1 hover:text-yellow focus-visible:text-yellow transition-colors disabled:text-gray-600 disabled:hover:text-gray-600 text-3xl sm:text-2xl"
 			{disabled}
 			on:click={togglePlay}
+			aria-label={$isPlaying ? 'pause' : 'lire'}
 		>
 			<PlayIcon state={audioState} />
 		</button>
 
 		<button
-			class="p-1 hover:text-yellow focus-visible:text-yellow transition-colors disabled:text-gray-600 disabled:hover:text-gray-600"
+			class="p-1 hover:text-yellow focus-visible:text-yellow transition-colors disabled:text-gray-600 disabled:hover:text-gray-600 text-lg hidden sm:block"
 			{disabled}
 			on:click={next}
+			aria-label="avancer dans l'audio"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +84,8 @@
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-8 h-8"
+				width="1em"
+				height="1em"
 			>
 				<path
 					stroke-linecap="round"
@@ -92,8 +97,8 @@
 	</div>
 </div>
 
-<div class=" flex items-center gap-2">
-	<span class="text-xs text-gray-300" aria-label="temps actuel"
+<div class=" items-center gap-2 hidden sm:flex">
+	<span class=" text-gray-300" aria-label="temps actuel"
 		>{formatDuration($audioTime.currentTime)}</span
 	>
 	<input
@@ -102,12 +107,12 @@
 		min="0"
 		max="100"
 		value={now}
-		class="w-60 h-1.5 rounded-lg appearance-none cursor-pointer"
+		class="w-60 md:w-80 h-2 rounded-lg appearance-none cursor-pointer"
 		style="--left:{now}%"
 		on:input={handleInput}
+		aria-label="timeline"
 	/>
-	<span class="text-xs text-gray-300" aria-label="durée">{formatDuration($audioTime.duration)}</span
-	>
+	<span class=" text-gray-300" aria-label="durée">{formatDuration($audioTime.duration)}</span>
 </div>
 
 <style lang="postcss">

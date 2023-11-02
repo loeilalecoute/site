@@ -2,6 +2,7 @@
 	import { citys } from '$lib/93.json'
 	import Map93 from './Map93.svelte'
 	import MainNavItem from './MainNavItem.svelte'
+	import { base } from '$app/paths'
 
 	const items = citys.filter((c) => c.project)
 
@@ -16,7 +17,7 @@
 	<nav id="projets">
 		<ul class="space-y-[1em] md:space-y-0 pb-[100vh] px-4">
 			{#each items as { name, code }}
-				<MainNavItem bind:selected {name} {code} />
+				<MainNavItem bind:selected {name} {code} href="{base}/projets/aubervilliers" />
 			{/each}
 		</ul>
 	</nav>

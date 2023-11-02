@@ -10,7 +10,8 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="w-8 h-8"
+		width="1em"
+		height="1em"
 	>
 		<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
 	</svg>
@@ -21,7 +22,8 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="w-8 h-8"
+		width="1em"
+		height="1em"
 	>
 		<path
 			stroke-linecap="round"
@@ -35,8 +37,9 @@
 		fill="none"
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
-		stroke="currentColor"
-		class="w-8 h-8 animate-spin"
+		class="animate-spin text-gray-50"
+		width="1em"
+		height="1em"
 	>
 		<path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1012.728 0" />
 	</svg>

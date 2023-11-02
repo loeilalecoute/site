@@ -1,6 +1,13 @@
 <script>
 	import { base } from '$app/paths'
-	import { audioData, audioStore, isLoading, isPlaying } from '$lib/stores/currentAudio.js'
+	import {
+		audioData,
+		audioStore,
+		isLoading,
+		isPlaying,
+		audioTime
+	} from '$lib/stores/currentAudio.js'
+	import formatDuration from '$lib/utils/formatDuration.js'
 	import PlayIcon from './PlayIcon.svelte'
 	/**@type {string}*/
 	export let title
@@ -37,15 +44,25 @@
 		{/if}
 		<span>{date}</span>
 	</p>
-	<button on:click={handleClick}><PlayIcon {state} /></button>
-	<a href={base + src} download>
+	<button
+		class="text-xl hover:text-yellow focus-visible:text-yellow transition-colors"
+		on:click={handleClick}
+		aria-label="écouter"><PlayIcon {state} /></button
+	>
+	<a
+		class="text-xl hover:text-yellow focus-visible:text-yellow transition-colors"
+		href={base + src}
+		download
+		aria-label="télécharger"
+	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
 			viewBox="0 0 24 24"
 			stroke-width="1.5"
 			stroke="currentColor"
-			class="w-8 h-8"
+			width="1em"
+			height="1em"
 		>
 			<path
 				stroke-linecap="round"
@@ -55,6 +72,10 @@
 		</svg>
 	</a>
 	{#if current}
-		<span>En cours</span>
+		{#if state === 'loading'}
+			<span>En chargement...</span>
+		{:else}
+			<span>{formatDuration($audioTime.currentTime)} / {formatDuration($audioTime.duration)}</span>
+		{/if}
 	{/if}
 </div>
