@@ -1,7 +1,13 @@
 ---
-title: Aubervilliers
+title: Aubervilliers, c’est le bercail !
 audios:
-  - /audios/alombredufort-9cube.mp3
+  - src: /audios/alombredufort-9cube.mp3
+    title: À l'ombre du fort
+    date: 2007
+    emission: 9cube
+  - src: /audios/auber-deambulation-1.mp3
+    title: Déambulation 1
+    date: 2007
 ---
 
 # Bonjour

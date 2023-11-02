@@ -1,19 +1,25 @@
 <script>
 	import { base } from '$app/paths'
 	import { audioStore } from '$lib/stores/currentAudio.js'
+	import AudioCard from './AudioCard.svelte'
 
 	/**@type{string}*/
 	export let title
-	/**@type {string[]}*/
+	/**@type {{src:string,title:string, emission?:string, date:string}[]}*/
 	export let audios
 </script>
 
-<article class="prose mx-auto mt-16 prose-invert">
+<div class="container mx-auto">
 	<ul>
 		{#each audios as audio}
-			<li><button on:click={() => audioStore.loadAudio(base + audio)}>{audio}</button></li>
+			<li>
+				<AudioCard {...audio} />
+			</li>
 		{/each}
 	</ul>
+</div>
+
+<article class="prose mx-auto mt-16 prose-invert">
 	<h1>{title}</h1>
 	<slot />
 </article>
