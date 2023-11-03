@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-static'
 import { vitePreprocess } from '@sveltejs/kit/vite'
 import { mdsvex } from 'mdsvex'
+import remarkToc from 'remark-toc'
+import rehypeSlug from 'rehype-slug'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -15,14 +17,18 @@ const config = {
 		}
 	},
 	preprocess: [
-		vitePreprocess(),
 		mdsvex({
 			extensions: ['.md'],
 			layout: {
-				text: 'src/lib/components/MdLayout.svelte',
-				projets: 'src/lib/components/ProjetLayout.svelte'
-			}
-		})
+				_: 'src/lib/components/MarkdownLayouts/Base.svelte',
+				text: 'src/lib/components/MarkdownLayouts/Text.svelte',
+				projets: 'src/lib/components/MarkdownLayouts/ProjetLayout.svelte',
+				about: 'src/lib/components/MarkdownLayouts/About.svelte'
+			},
+			remarkPlugins: [[remarkToc]],
+			rehypePlugins: [rehypeSlug]
+		}),
+		vitePreprocess()
 	]
 }
 

@@ -10,8 +10,8 @@
 	let buttonEl
 
 	let links = [
-		{ text: 'Accueil', href: '/' },
-		{ text: 'présentation', href: '/presentation' },
+		{ text: 'accueil', href: '/' },
+		{ text: 'à propos', href: '/apropos' },
 		{ text: 'ressources', href: '/ressources' },
 		{ text: 'portfolio', href: '/portfolio' },
 		{ text: 'contact', href: '/contact' }

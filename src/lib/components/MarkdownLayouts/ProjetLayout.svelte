@@ -1,5 +1,5 @@
 <script>
-	import AudioCard from './AudioCard.svelte'
+	import AudioCard from '../AudioCard.svelte'
 
 	/**@type{string}*/
 	export let title

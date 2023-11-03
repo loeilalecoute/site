@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: ['./src/**/*.{html,js,svelte,ts,.md}'],
 	theme: {
 		extend: {
 			height: {
@@ -12,8 +12,8 @@ export default {
 				screen: ['100svh', '100vh']
 			},
 			colors: {
-				// blue: '#70c2c0',
-				blue: '#87cccb',
+				// blue: '#87cccb',
+				blue: '#70c2c0',
 				yellow: '#FCCC03'
 			},
 			fontFamily: {
