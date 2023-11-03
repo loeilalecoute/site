@@ -37,6 +37,7 @@
 		fill="none"
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
+		stroke="currentColor"
 		class="animate-spin text-gray-50"
 		width="1em"
 		height="1em"
