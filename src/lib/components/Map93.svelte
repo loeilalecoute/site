@@ -13,6 +13,7 @@
 	let drawn = false
 
 	function onScreenEnter() {
+		if (visible) return
 		visible = true
 		setTimeout(() => (drawn = true), 2000)
 	}
@@ -29,13 +30,13 @@
 	role="figure"
 	viewBox={`0 0 500 500`}
 	class="ml-auto max-h-full"
-	use:intersectionObserver={{ once: true, threshold: 0.3 }}
+	use:intersectionObserver={{ once: false, threshold: 0.5 }}
 	on:screenEnter={onScreenEnter}
 >
 	{#each citys as { code, points }}
 		{#if visible}
 			<path
-				in:draw={{ duration: 2000, easing: sineOut, delay: 300 }}
+				in:draw={{ duration: 2000, easing: sineOut, delay: 0 }}
 				id={code}
 				class=" fill-transparent stroke-blue/30"
 				d={path(points)}

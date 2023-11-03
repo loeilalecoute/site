@@ -10,7 +10,7 @@
 	let selected = undefined
 </script>
 
-<section class="container mx-auto">
+<section class="container mx-auto" id="navigation">
 	<div class="sticky top-0 -z-10 grid h-screen items-center p-4">
 		<Map93 {selected} />
 	</div>
