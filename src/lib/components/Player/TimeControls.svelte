@@ -10,6 +10,22 @@
 	$: disabled = $audioStore === undefined
 
 	/**
+	 * @param v {number}
+	 */
+	function setTime(v) {
+		if (!$audioStore) return
+		if (!$isPlaying)
+			$audioStore.addEventListener(
+				'play',
+				() => {
+					$audioStore?.pause()
+				},
+				{ once: true }
+			)
+		$audioStore.currentTime = v
+	}
+
+	/**
 	 * @type {import('svelte/elements.js').FormEventHandler<HTMLInputElement>}
 	 */
 	function handleInput(e) {
@@ -18,17 +34,21 @@
 		const target = e.target
 		if (!$audioStore) return
 		const value = (target.valueAsNumber / 100) * $audioTime.duration
-		$audioStore.currentTime = value
+		setTime(value)
 	}
 
 	function prev() {
 		if (!$audioStore) return
-		$audioStore.currentTime -= 10
+		const value = $audioStore.currentTime - 10
+		setTime(value)
 	}
+
 	function next() {
 		if (!$audioStore) return
-		$audioStore.currentTime += 10
+		const value = $audioStore.currentTime + 10
+		setTime(value)
 	}
+
 	function togglePlay() {
 		if (!$audioStore) return
 		if ($audioStore.paused) {
@@ -113,6 +133,7 @@
 			type="range"
 			min="0"
 			max="100"
+			step="0.1"
 			value={now}
 			class="h-2 w-60 cursor-pointer appearance-none rounded-lg md:w-80"
 			style="--left:{now}%"
