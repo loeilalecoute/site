@@ -2,8 +2,21 @@ import { base } from '$app/paths'
 import { writable } from 'svelte/store'
 
 const defineVolumeStore = () => {
-	const { subscribe, set } = writable(0.5)
-	return { subscribe, set }
+	const { subscribe, update } = writable({
+		current: 0.5,
+		last: 0.5
+	})
+
+	/**
+	 * @param {number} v
+	 */
+	const setVolume = (v) => {
+		update(({ current, last }) => {
+			if (current > 0) return { current: v, last: current }
+			return { current: v, last }
+		})
+	}
+	return { subscribe, setVolume }
 }
 
 const _volume = defineVolumeStore()
@@ -99,7 +112,7 @@ const defineAudioStore = () => {
 		audio.addEventListener('pause', _isPlaying.pause)
 		audio.addEventListener('play', _isPlaying.play)
 		audio.addEventListener('volumechange', () => {
-			_volume.set(audio.volume)
+			_volume.setVolume(audio.volume)
 		})
 
 		audio.addEventListener('timeupdate', () => {

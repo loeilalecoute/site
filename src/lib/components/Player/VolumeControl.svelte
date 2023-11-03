@@ -15,7 +15,7 @@
 
 	function handleClick() {
 		if (!$audioStore) return
-		if ($audioStore?.volume === 0) $audioStore.volume = 0.5
+		if ($audioStore?.volume === 0) $audioStore.volume = $volume.last
 		else $audioStore.volume = 0
 	}
 </script>
@@ -61,9 +61,9 @@
 		min="0"
 		max="1"
 		step="0.1"
-		value={$volume}
+		value={$volume.current}
 		class="w-30 hidden h-1 cursor-pointer appearance-none rounded-lg lg:block"
-		style="--left:{$volume * 100}%"
+		style="--left:{$volume.current * 100}%"
 		aria-label="timeline"
 		on:input={handleInput}
 	/>
