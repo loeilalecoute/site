@@ -83,7 +83,7 @@
 					<a
 						href="{base}{href}"
 						style="--_index:{index};"
-						class="with-anim block capitalize transition-colors hover:text-yellow focus-visible:text-yellow"
+						class="anim-from-bottom block capitalize transition-colors hover:text-yellow focus-visible:text-yellow"
 						>{text}</a
 					>
 				</li>
@@ -140,21 +140,5 @@
 	.isOpen svg {
 		rotate: 90deg;
 		transition: rotate var(--duration);
-	}
-
-	.with-anim {
-		animation: slide-in 300ms both;
-		animation-timing-function: theme(transitionTimingFunction.ease-out-1);
-		animation-delay: calc(var(--_index) * 100ms + 200ms);
-	}
-	@keyframes slide-in {
-		from {
-			transform: translate(0, 100%);
-			clip-path: inset(0% 0% 100% 0%);
-		}
-		to {
-			transform: translate(0, 0%);
-			clip-path: inset(0% 0% 0% 0%);
-		}
 	}
 </style>

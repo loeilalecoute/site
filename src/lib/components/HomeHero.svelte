@@ -12,10 +12,10 @@
 	<p
 		class=" my-auto mb-auto grid text-center text-2xl font-semibold uppercase leading-tight sm:text-left lg:text-3xl xl:text-4xl 2xl:text-5xl"
 	>
-		<span class="with-anim block" style="--_index:0">2005 2023</span>
-		<span class="with-anim block" style="--_index:1">une mémoire</span>
-		<span class="with-anim block" style="--_index:2">radiophonique</span>
-		<span class="with-anim block" style="--_index:3">du 93</span>
+		<span class="anim-from-bottom block" style="--_index:0">2005 2023</span>
+		<span class="anim-from-bottom block" style="--_index:1">une mémoire</span>
+		<span class="anim-from-bottom block" style="--_index:2">radiophonique</span>
+		<span class="anim-from-bottom block" style="--_index:3">du 93</span>
 	</p>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -31,21 +31,3 @@
 		/></svg
 	>
 </section>
-
-<style lang="postcss">
-	.with-anim {
-		animation: slide-in 300ms both;
-		animation-timing-function: theme(transitionTimingFunction.ease-out-1);
-		animation-delay: calc(var(--_index) * 50ms + 600ms);
-	}
-	@keyframes slide-in {
-		from {
-			transform: translate(0, 100%);
-			clip-path: inset(0% 0% 100% 0%);
-		}
-		to {
-			transform: translate(0, 0%);
-			clip-path: inset(0% 0% 0% 0%);
-		}
-	}
-</style>

@@ -17,3 +17,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities{
+	.anim-from-bottom{
+		animation: slide-in 300ms both;
+		animation-timing-function: theme(transitionTimingFunction.ease-out-1);
+		animation-delay: calc(var(--_index) * 100ms + 200ms);
+	}
+	@keyframes slide-in {
+		from {
+			transform: translate(0, 100%);
+			clip-path: inset(0% 0% 100% 0%);
+		}
+		to {
+			transform: translate(0, 0%);
+			clip-path: inset(0% 0% 0% 0%);
+		}
+	}
+}
