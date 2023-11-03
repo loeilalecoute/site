@@ -3,7 +3,7 @@
 	id="svg1"
 	version="1.1"
 	viewBox="0 0 216.83 156.63"
-	class="mx-auto max-w-sm sm:max-w-none"
+	class="mx-auto w-full max-w-sm sm:max-w-none"
 >
 	<g stroke-linecap="round">
 		<path
