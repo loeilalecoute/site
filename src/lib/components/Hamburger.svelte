@@ -3,6 +3,12 @@
 	import { base } from '$app/paths'
 	import { trapFocus } from '$lib/actions/trapFocus.js'
 	import { slide } from 'svelte/transition'
+	import { tweened } from 'svelte/motion'
+
+	const lineTranslate = tweened(25)
+	const lineRotate = tweened(0)
+	let lineOpacity = 1
+	const svgRotate = tweened(0)
 
 	let isOpen = false
 
@@ -17,17 +23,27 @@
 		{ text: 'contact', href: '/contact' }
 	]
 
-	function open() {
+	async function open() {
 		isOpen = true
 		document.documentElement.style.setProperty('overflow', 'hidden')
+
+		await lineTranslate.set(0, { duration: 200 })
+		svgRotate.set(90, { duration: 400 })
+		lineOpacity = 0
+		await lineRotate.set(45, { duration: 200 })
 	}
 
-	function close() {
+	async function close() {
 		isOpen = false
 		document.documentElement.style.removeProperty('overflow')
+
+		svgRotate.set(0, { duration: 0 })
+		await lineRotate.set(0, { duration: 200 })
+		lineOpacity = 1
+		await lineTranslate.set(25, { duration: 200 })
 	}
 
-	function handleClick() {
+	async function handleClick() {
 		if (isOpen) {
 			close()
 		} else {
@@ -67,6 +83,12 @@
 			fill="none"
 			stroke-linecap="round"
 			stroke-width="1.2"
+			style="
+			--line-translate:{$lineTranslate};
+			--line-rotate:{$lineRotate};
+			--svg-rotate:{$svgRotate};
+			--line-opacity:{lineOpacity};
+			"
 		>
 			<path class="hamburger1" d="M-10 0 h 20" />
 			<path class="hamburger2" d="M-10 0 h 20" />
@@ -98,47 +120,19 @@
 	}
 
 	button .hamburger1 {
-		translate: 0 -25%;
+		transform: translate(0, calc(-1% * var(--line-translate)))
+			rotate(calc(1deg * var(--line-rotate)));
 	}
 
 	button .hamburger2 {
-		opacity: 1;
+		opacity: var(--line-opacity);
 	}
 
 	button .hamburger3 {
-		translate: 0 25%;
+		transform: translate(0, calc(1% * var(--line-translate)))
+			rotate(calc(-1deg * var(--line-rotate)));
 	}
-
-	button path {
-		transition:
-			var(--duration) translate var(--duration),
-			var(--duration) rotate 0s,
-			0s opacity var(--duration);
-	}
-
-	.isOpen .hamburger1 {
-		translate: 0 0;
-		rotate: -45deg;
-	}
-
-	.isOpen .hamburger2 {
-		opacity: 0;
-	}
-
-	.isOpen .hamburger3 {
-		translate: 0 0;
-		rotate: 45deg;
-	}
-
-	.isOpen path {
-		transition:
-			var(--duration) translate 0s,
-			var(--duration) rotate var(--duration),
-			0s opacity var(--duration);
-	}
-
-	.isOpen svg {
-		rotate: 90deg;
-		transition: rotate var(--duration);
+	svg {
+		transform: rotate(calc(1deg * var(--svg-rotate)));
 	}
 </style>
