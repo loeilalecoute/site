@@ -97,15 +97,15 @@
 		--duration: 0.3s;
 	}
 
-	button path:nth-child(1) {
+	button .hamburger1 {
 		translate: 0 -25%;
 	}
 
-	button path:nth-child(2) {
+	button .hamburger2 {
 		opacity: 1;
 	}
 
-	button path:nth-child(3) {
+	button .hamburger3 {
 		translate: 0 25%;
 	}
 
@@ -116,16 +116,16 @@
 			0s opacity var(--duration);
 	}
 
-	.isOpen path:nth-child(1) {
+	.isOpen .hamburger1 {
 		translate: 0 0;
 		rotate: -45deg;
 	}
 
-	.isOpen path:nth-child(2) {
+	.isOpen .hamburger2 {
 		opacity: 0;
 	}
 
-	.isOpen path:nth-child(3) {
+	.isOpen .hamburger3 {
 		translate: 0 0;
 		rotate: 45deg;
 	}
