@@ -1,5 +1,6 @@
 ---
 title: Aubervilliers, c’est le bercail !
+city: aubervilliers
 audios:
   - src: /audios/alombredufort-9cube.mp3
     title: À l'ombre du fort

@@ -22,12 +22,13 @@ const defineVolumeStore = () => {
 const _volume = defineVolumeStore()
 
 const defineAudioData = () => {
-	/**@type {import('svelte/store').Writable<{src:string,title:string,date:string,infos?:string}>} */
+	/**@type {import('svelte/store').Writable<{src:string,title:string,date:string,infos?:string,city:string}>} */
 	const { subscribe, set } = writable({
 		src: '',
 		title: '',
 		date: '',
-		infos: ''
+		infos: '',
+		city: ''
 	})
 	return { subscribe, set }
 }
@@ -87,13 +88,14 @@ const defineAudioStore = () => {
 	 * @param {string} src
 	 * @param {string} title
 	 * @param {string} date
+	 * @param {string} city
 	 * @param {string} [infos]
 	 */
-	const loadAudio = (src, title, date, infos) => {
+	const loadAudio = (src, title, date, city, infos) => {
 		const audio = new Audio()
 		console.log(audio)
 		_isLoading.set(true)
-		_audioData.set({ src, title, date, infos })
+		_audioData.set({ src, title, date, city, infos })
 
 		audio.addEventListener('canplay', () => {
 			let volume = 0.5

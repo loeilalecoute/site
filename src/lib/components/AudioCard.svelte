@@ -14,6 +14,8 @@
 	/**@type {string}*/
 	export let title
 	/**@type {string}*/
+	export let city
+	/**@type {string}*/
 	export let date
 	/**@type {string|undefined}*/
 	export let infos = undefined
@@ -34,15 +36,15 @@
 	}
 
 	function handleClick() {
-		if (!current) audioStore.loadAudio(src, title, date, infos)
+		if (!current) audioStore.loadAudio(src, title, date, city, infos)
 		else if (state === 'playing') $audioStore?.pause()
 		else if (state === 'paused') $audioStore?.play()
 	}
 </script>
 
 <div class="grid items-center">
-	<h3 class="text-xl font-semibold text-blue">{title}</h3>
-	<p class="text-lg">
+	<h3 class="text-lg font-semibold text-blue">{title}</h3>
+	<p class="">
 		{#if infos}
 			<span>{infos}</span>,
 		{/if}

@@ -38,7 +38,7 @@
 		document.documentElement.style.removeProperty('overflow')
 
 		svgRotate.set(0, { duration: 0 })
-		await lineRotate.set(0, { duration: 200 })
+		await lineRotate.set(0, { duration: 250 })
 		lineOpacity = 1
 		await lineTranslate.set(25, { duration: 200 })
 	}

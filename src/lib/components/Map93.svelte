@@ -3,6 +3,7 @@
 	import { intersectionObserver } from '$lib/actions/intersectionObserver.js'
 	import { sineOut } from 'svelte/easing'
 	import { draw } from 'svelte/transition'
+	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
 
 	/**code of the selected city
 	 * @type {string|undefined}
@@ -16,13 +17,6 @@
 		if (visible) return
 		visible = true
 		setTimeout(() => (drawn = true), 2000)
-	}
-
-	/**
-	 * @param points {number[][]}
-	 */
-	function path(points) {
-		return `M${points.map(([x, y]) => `${(x / width) * 500}, ${(y / height) * 500}`).join('L ')} Z`
 	}
 </script>
 
@@ -39,14 +33,14 @@
 				in:draw={{ duration: 2000, easing: sineOut, delay: 0 }}
 				id={code}
 				class=" fill-transparent stroke-blue/30"
-				d={path(points)}
+				d={getPathFromPoints(points, width, height)}
 				stroke-linejoin="round"
 			/>
 		{/if}
 		<path
 			class="fill-blue/80 stroke-blue/60 stroke-[2] transition-opacity duration-500"
 			class:opacity-0={selected !== code || !drawn}
-			d={path(points)}
+			d={getPathFromPoints(points, width, height)}
 			stroke-linejoin="round"
 		/>
 	{/each}

@@ -3,6 +3,7 @@
 	import Map93 from './Map93.svelte'
 	import MainNavItem from './MainNavItem.svelte'
 	import { base } from '$app/paths'
+	import { getSlug } from '$lib/utils/getSlug.js'
 
 	const items = citys.filter((c) => c.project)
 
@@ -17,7 +18,7 @@
 	<nav id="projets">
 		<ul class="space-y-[1em] px-4 pb-[100vh] md:space-y-0">
 			{#each items as { name, code }}
-				<MainNavItem bind:selected {name} {code} href="{base}/projets/aubervilliers" />
+				<MainNavItem bind:selected {name} {code} href="{base}/projets/{getSlug(name)}" />
 			{/each}
 		</ul>
 	</nav>

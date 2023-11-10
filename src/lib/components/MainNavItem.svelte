@@ -33,7 +33,7 @@
 	$: distanceFromCenter =
 		element && Math.abs(element.offsetTop + height * 0.5 - scrollY - screenHeight * 0.5)
 
-	$: factor = distanceFromCenter ? 1 - round(distanceFromCenter / (screenHeight * 0.5)) : 0
+	$: factor = distanceFromCenter ? 1 - round(distanceFromCenter / (screenHeight * 0.5)) : 1
 
 	/**
 	 * @param code {string}
@@ -69,7 +69,7 @@
 
 <style lang="postcss">
 	a {
-		opacity: calc(0.2 + 0.8 * var(--factor, 0));
-		transform: scale(calc(0.6 + 0.4 * var(--factor, 0)));
+		opacity: calc(0.2 + 0.8 * var(--factor, 1));
+		transform: scale(calc(0.6 + 0.4 * var(--factor, 1)));
 	}
 </style>

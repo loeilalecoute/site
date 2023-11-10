@@ -13,6 +13,7 @@
 		<p class="grid">
 			<span class="whitespace-nowrap font-semibold text-blue sm:text-lg">{$audioData.title}</span>
 			<span>
+				{$audioData.city},
 				{#if $audioData.infos}
 					{$audioData.infos},
 				{/if}

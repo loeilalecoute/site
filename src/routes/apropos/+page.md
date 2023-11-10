@@ -24,7 +24,7 @@ Lien: [12 ans d'éducation populaire et radiophonique](https://syntone.fr/loeil-
 
 L’association a pu travailler avec des publics variés (jeunes, retraités, mineurs isolés, détenus, personnes en situation de handicap, public scolaire…) dans le cadre d’interventions adaptées qui répondaient aux spécificités des sollicitations. Les principaux lieux d’interventions étaient les services municipaux, les centres socio-culturels, les MJC, les établissements scolaires, les maisons de retraite ou encore les locaux associatifs. L’enjeu était d’encourager l’autonomisation des participants pouvant aller jusqu’à la mise à disposition d’une mallette pédagogique incluant un kit de matériel et de ressources permettant d’élaborer du contenu radio sans l’intervention de l’association qui, par ailleurs, s’engageait à diffuser le contenu réalisé sur Radio Campus Paris.
 
-### Le cylcle d'initiation le plus populaire
+### Le cycle d'initiation le plus populaire
 
 Développé avec une approche « clé en main », ce cycle d’initiation permettait de concevoir une émission en 8 ateliers afin de permettre aux participants d’acquérir la maîtrise des outils et des techniques radio (enregistrement et prise de sons, technique d’écriture et d’interviews) tout en intégrant le travail de montage et de production. La dernière séance était consacrée à la diffusion en direct de l’émission sur les ondes de Radio Campus Paris, situé dans le 3e arrondissement, durant laquelle chaque participant.e déterminait son rôle : réalisateur.trice, chroniqueur.euse, présentateur.rice.
 
@@ -42,6 +42,6 @@ Dans le cadre d’actions spécifiques, l’œil à l’écoute a développé de
 
 Les territoires d’interventions se sont élargis en Ile-de-France : Paris, Créteil, Fontenay-sous-Bois, Grand Paris Express, en régions : ateliers radiophoniques itinérants de France Info, festival des Suds à Arles, festival Musiques Métisses à Angoulême et enfin à l’international : Mali, Taïwan, Palestine, Maroc.
 
-### La malette pédégogique
+### La malette pédagogique
 
 Ce projet a été conçu en collaboration avec la Direction Départementale de la Cohésion Sociale de la Seine-Saint-Denis. Cet outil avait pour objectif de permettre aux animateurs et intervenants de mener des projets de créations sonores, auprès d’un public varié, de manière autonome et ludique.

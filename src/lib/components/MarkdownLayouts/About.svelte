@@ -11,7 +11,7 @@
 </svelte:head>
 
 <div class="container mx-auto mt-8 px-4">
-	<h1 class="text-6xl/relaxed font-bold text-white sm:text-7xl/relaxed">{title}</h1>
+	<h1 class="text-5xl/snug font-bold text-white sm:text-7xl/snug">{title}</h1>
 	<span class="block h-[1px] max-w-screen-xl bg-gray-50" aria-hidden="true" />
 </div>
 <div class="container mx-auto mt-12 flex flex-row-reverse justify-center">
