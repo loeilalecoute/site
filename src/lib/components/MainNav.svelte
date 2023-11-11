@@ -15,7 +15,7 @@
 	<div class="sticky top-0 -z-10 grid h-screen items-center p-4">
 		<Map93 {selected} />
 	</div>
-	<nav id="projets">
+	<nav id="projets" class="-mt-[50vh]">
 		<ul class="space-y-[1em] px-4 pb-[100vh] md:space-y-0">
 			{#each items as { name, code }}
 				<MainNavItem bind:selected {name} {code} href="{base}/projets/{getSlug(name)}" />
