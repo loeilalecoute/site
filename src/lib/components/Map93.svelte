@@ -23,7 +23,7 @@
 <svg
 	role="figure"
 	viewBox={`0 0 500 500`}
-	class="ml-auto max-h-full"
+	class="ml-auto h-full max-h-full max-w-full"
 	use:intersectionObserver={{ once: false, threshold: 0.5 }}
 	on:screenEnter={onScreenEnter}
 >
@@ -32,7 +32,7 @@
 			<path
 				in:draw={{ duration: 2000, easing: sineOut, delay: 0 }}
 				id={code}
-				class=" fill-transparent stroke-blue/30"
+				class=" fill-gray-900 stroke-blue/30"
 				d={getPathFromPoints(points, width, height)}
 				stroke-linejoin="round"
 			/>
