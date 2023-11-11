@@ -17,7 +17,7 @@
 		<span class="anim-from-bottom block" style="--_index:2">radiophonique</span>
 		<span class="anim-from-bottom block" style="--_index:3">du 93</span>
 	</p>
-	<a href="#navigation" class="fixed bottom-2 left-1/2 h-10 w-10 p-2">
+	<a href="#navigation" class="fixed bottom-2 left-1/2 h-10 w-10 -translate-x-1/2 p-2">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
