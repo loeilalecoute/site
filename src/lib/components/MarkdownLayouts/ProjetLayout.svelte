@@ -1,19 +1,20 @@
 <script>
-	import { base } from '$app/paths'
-	import { citys } from '$lib/93.json'
+	import { citys as allCitys } from '$lib/93.json'
 	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
 	import { getSlug } from '$lib/utils/getSlug.js'
 	import AudioCard from '../AudioCard.svelte'
 
 	/**@type{string}*/
 	export let title
-	/**@type {{src:string,title:string, infos?:string,description?: string, date:string}[]}*/
+	/**@type {{src:string,title:string, infos?:string,description?: string, date:string}[]|undefined}*/
 	export let audios
 	/**@type {string}*/
 	export let city
 
+	let citys = allCitys.filter((el) => el.project)
+
 	/**@type {{previous:string,next:string}}*/
-	export let pagination
+	let pagination
 
 	/**@type {{viewBox:string, path: string} | undefined}*/
 	let svgData = undefined
@@ -80,11 +81,13 @@
 			<slot />
 		</article>
 		<ul class=" mx-auto max-w-prose divide-y">
-			{#each audios as audio}
-				<li class="py-4">
-					<AudioCard {...audio} city={cityData?.name ?? city} />
-				</li>
-			{/each}
+			{#if audios}
+				{#each audios as audio}
+					<li class="py-4">
+						<AudioCard {...audio} city={cityData?.name ?? city} />
+					</li>
+				{/each}
+			{/if}
 		</ul>
 	</div>
 </div>

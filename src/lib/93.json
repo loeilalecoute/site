@@ -27,7 +27,7 @@
 		{
 			"code": "93600",
 			"name": "Aulnay-sous-Bois",
-			"project": true,
+			"project": false,
 			"points": [
 				[14855, 10590],
 				[13953, 10262],
@@ -70,7 +70,7 @@
 		},
 		{
 			"code": "93150",
-			"name": "Le Blanc-Mesnil",
+			"name": "Blanc-Mesnil",
 			"project": true,
 			"points": [
 				[13576, 10409],
@@ -271,7 +271,7 @@
 		},
 		{
 			"code": "93800",
-			"name": "Épinay-sur-Seine",
+			"name": "Epinay-sur-Seine",
 			"project": true,
 			"points": [
 				[3639, 7645],
@@ -337,7 +337,7 @@
 		},
 		{
 			"code": "93450",
-			"name": "L'Île-Saint-Denis",
+			"name": "Ile-Saint-Denis",
 			"project": true,
 			"points": [
 				[2255, 10600],
@@ -541,7 +541,7 @@
 			"top": 11926,
 			"bottom": 14892,
 			"center": [12435.5, 13409],
-			"project": true,
+			"project": false,
 			"name": "Noisy-le-Sec"
 		},
 		{
@@ -565,7 +565,7 @@
 			"top": 10432,
 			"bottom": 14290,
 			"center": [8746, 12361],
-			"project": true,
+			"project": false,
 			"name": "Pantin"
 		},
 		{
@@ -621,8 +621,8 @@
 			"top": 13596,
 			"bottom": 14819,
 			"center": [8000, 14207.5],
-			"project": false,
-			"name": "Le Pré-Saint-Gervais"
+			"project": true,
+			"name": "Le Pre-Saint-Gervais"
 		},
 		{
 			"code": "93340",
@@ -686,7 +686,7 @@
 			"top": 13720,
 			"bottom": 16927,
 			"center": [14476, 15323.5],
-			"project": true,
+			"project": false,
 			"name": "Rosny-sous-Bois"
 		},
 		{
@@ -713,7 +713,7 @@
 			"top": 6778,
 			"bottom": 12222,
 			"center": [5100, 9500],
-			"project": true,
+			"project": false,
 			"name": "Saint-Denis"
 		},
 		{
@@ -732,7 +732,7 @@
 			"top": 9831,
 			"bottom": 12321,
 			"center": [3200, 11076],
-			"project": true,
+			"project": false,
 			"name": "Saint-Ouen"
 		},
 		{
@@ -775,7 +775,7 @@
 			"top": 4397,
 			"bottom": 7428,
 			"center": [7211.5, 6212.5],
-			"project": true,
+			"project": false,
 			"name": "Stains"
 		},
 		{
@@ -808,7 +808,7 @@
 			"top": 0,
 			"bottom": 8337,
 			"center": [19022, 3200],
-			"project": true,
+			"project": false,
 			"name": "Tremblay-en-France"
 		},
 		{
@@ -856,7 +856,7 @@
 			"top": 12639,
 			"bottom": 15343,
 			"center": [16046, 14100],
-			"project": true,
+			"project": false,
 			"name": "Villemomble"
 		},
 		{
@@ -880,7 +880,7 @@
 			"top": 4099,
 			"bottom": 8570,
 			"center": [17871.5, 6000],
-			"project": true,
+			"project": false,
 			"name": "Villepinte"
 		},
 		{
