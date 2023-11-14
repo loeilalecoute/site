@@ -8,6 +8,7 @@
 	const lineTranslate = tweened(25)
 	const lineRotate = tweened(0)
 	let lineOpacity = 1
+	let buttonOpacity = tweened(1, { duration: 100 })
 	const svgRotate = tweened(0)
 
 	let isOpen = false
@@ -27,6 +28,7 @@
 		isOpen = true
 		document.documentElement.style.setProperty('overflow', 'hidden')
 
+		buttonOpacity.set(0)
 		await lineTranslate.set(0, { duration: 200 })
 		svgRotate.set(90, { duration: 400 })
 		lineOpacity = 0
@@ -41,6 +43,7 @@
 		await lineRotate.set(0, { duration: 250 })
 		lineOpacity = 1
 		await lineTranslate.set(25, { duration: 200 })
+		buttonOpacity.set(1)
 	}
 
 	async function handleClick() {
@@ -88,11 +91,15 @@
 			--line-rotate:{$lineRotate};
 			--svg-rotate:{$svgRotate};
 			--line-opacity:{lineOpacity};
+			--button-opacity:{$buttonOpacity};
 			"
 		>
 			<path class="hamburger1" d="M-10 0 h 20" />
 			<path class="hamburger2" d="M-10 0 h 20" />
 			<path class="hamburger3" d="M-10 0 h 20" />
+			<circle cx="-3" cy="-6" r="2" class="fill-gray-900" />
+			<circle cx="3" cy="0" r="2" class="fill-gray-900" />
+			<circle cx="-3" cy="6" r="2" class="fill-gray-900" />
 		</svg>
 	</button>
 	{#if isOpen}
@@ -134,5 +141,22 @@
 	}
 	svg {
 		transform: rotate(calc(1deg * var(--svg-rotate)));
+	}
+
+	button circle {
+		transition: transform 0.3s theme(transitionTimingFunction.ease-in-1);
+		opacity: var(--button-opacity);
+	}
+
+	button circle:nth-of-type(1) {
+		--tx: 35%;
+	}
+
+	button circle:nth-of-type(2) {
+		--tx: -30%;
+	}
+
+	button:hover circle {
+		transform: translateX(var(--tx, 10%));
 	}
 </style>
