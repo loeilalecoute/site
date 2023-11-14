@@ -53,6 +53,14 @@
 	})
 </script>
 
+<svelte:head>
+	<style>
+		html {
+			scroll-padding-top: 20%;
+		}
+	</style>
+</svelte:head>
+
 <nav class="max-w-xs">
 	<h2 class="border-gray-500 pb-3 uppercase">Sommaire</h2>
 	<div class="relative border-l border-gray-500 pl-4">
