@@ -3,6 +3,7 @@
 	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
 	import { getSlug } from '$lib/utils/getSlug.js'
 	import AudioCard from '../AudioCard.svelte'
+	import Title from '../Title.svelte'
 
 	/**@type{string}*/
 	export let title
@@ -65,16 +66,8 @@
 	{/if}
 </div>
 
+<Title text={city} />
 <div class="container mx-auto mt-8 px-4">
-	<div class="">
-		<h1 class="text-3xl/snug font-bold text-white sm:text-6xl/snug">
-			<span class="capitalize">
-				{city}
-			</span>
-		</h1>
-		<span class="block h-[1px] max-w-screen-xl bg-gray-50" aria-hidden="true" />
-	</div>
-
 	<div class="container mx-auto mt-8 justify-between gap-8 space-y-8 xl:flex">
 		<article class="prose prose-xl prose-invert mx-auto prose-h2:text-2xl">
 			<h2>{title}</h2>

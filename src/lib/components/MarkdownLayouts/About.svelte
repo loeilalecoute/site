@@ -1,5 +1,6 @@
 <script>
 	import { browser } from '$app/environment'
+	import Title from '../Title.svelte'
 	import Toc from '../Toc.svelte'
 
 	/**@type{string}*/
@@ -10,10 +11,7 @@
 	<title>À propos</title>
 </svelte:head>
 
-<div class="container mx-auto mt-8 px-4">
-	<h1 class="text-5xl/snug font-bold text-white sm:text-7xl/snug">{title}</h1>
-	<span class="block h-[1px] max-w-screen-xl bg-gray-50" aria-hidden="true" />
-</div>
+<Title text={title} />
 <div class="container mx-auto mt-12 flex flex-row-reverse justify-center">
 	{#if browser}
 		<aside class="ml-auto hidden max-w-[33ch] px-4 xl:block">
