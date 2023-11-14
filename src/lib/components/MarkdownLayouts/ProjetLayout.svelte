@@ -89,7 +89,7 @@
 	</div>
 </div>
 
-<nav class=" container mx-auto mb-32 mt-12 flex justify-between px-4 transition-colors">
+<nav class=" container mx-auto mt-12 flex justify-between px-4 transition-colors">
 	<a
 		href="./{getSlug(pagination.previous)}"
 		class="group flex items-center gap-1 transition-colors focus-visible:text-yellow"

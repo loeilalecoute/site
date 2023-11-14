@@ -23,7 +23,7 @@
 		</aside>
 	{/if}
 
-	<article class="prose-m prose prose-lg prose-invert col-start-2 w-full grow px-4 pb-80">
+	<article class="prose prose-lg prose-invert col-start-2 w-full grow px-4 pb-40">
 		<slot />
 	</article>
 </div>

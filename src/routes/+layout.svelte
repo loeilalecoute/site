@@ -5,7 +5,7 @@
 </script>
 
 <Hamburger />
-<main>
+<main class="pb-40">
 	<slot />
 	<Player />
 </main>
