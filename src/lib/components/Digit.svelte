@@ -1,5 +1,4 @@
 <script>
-	import { sineIn } from 'svelte/easing'
 	import { tweened } from 'svelte/motion'
 
 	let currentCount = tweened(0)
@@ -13,12 +12,12 @@
 		return ((number % divider) + divider) % divider
 	}
 
-	$: currentCount.set(count, { duration: Math.abs($currentCount - count) * 250 })
+	$: currentCount.set(count, { duration: Math.abs($currentCount - count) * 350 })
 	$: offset = modulo($currentCount, 1)
 </script>
 
-<div class="w- relative inline-block w-[1em] overflow-hidden">
-	<div style="transform: translate(0, {-offset * 100}%);" class="text-center">
+<div class="relative inline-block -translate-y-1 overflow-hidden align-middle leading-[1]">
+	<div style="transform: translate(0, {-offset * 100}%);" class=" text-center">
 		<span>
 			{Math.floor($currentCount)}
 		</span>
