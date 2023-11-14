@@ -16,7 +16,7 @@
 		<Map93 {selected} />
 	</div>
 	<nav id="projets" class="-mt-[50vh]">
-		<ul class="space-y-[1em] px-4 pb-[100vh] md:space-y-0">
+		<ul class="space-y-[1em] px-4 pb-[50vmin] md:space-y-0">
 			{#each items as { name, code }}
 				<MainNavItem bind:selected {name} {code} href="{base}/projets/{getSlug(name)}" />
 			{/each}
