@@ -3,11 +3,11 @@
 </script>
 
 <div class="container mx-auto">
-	<Title text="Liens et contact" />
-	<article class="mt-8 space-y-4 px-4">
+	<Title text="Liens et Contacts" />
+	<article class="mt-8 space-y-8 px-4">
 		<p class="prose prose-xl prose-invert">
 			L’association l’œil à l’écoute n’est plus active depuis décembre 2023, pour accéder à
-			l’intégralité de ses archives sonores, contactez :
+			l’intégralité de ses archives sonores :
 		</p>
 		<ul class="max-w-prose space-y-2 text-lg">
 			<li>
@@ -103,7 +103,7 @@
 						/></svg
 					>
 
-					Podcasts</a
+					Liens vers l'intégralité des podcasts sur Radio Campus Paris</a
 				>
 			</li>
 			<li>

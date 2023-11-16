@@ -5,7 +5,7 @@
 	export let href
 </script>
 
-<li class="py-4 text-3xl/snug font-semibold">
+<li class=" text-2xl/snug font-semibold">
 	<a
 		rel="internal"
 		href={base + href}
