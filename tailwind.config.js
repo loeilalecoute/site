@@ -6,10 +6,10 @@ export default {
 	theme: {
 		extend: {
 			height: {
-				screen: ['100svh', '100vh']
+				screen: ['100vh', '100svh']
 			},
 			minHeight: {
-				screen: ['100svh', '100vh']
+				screen: ['100vh', '100svh']
 			},
 			colors: {
 				// blue: '#87cccb',
