@@ -22,8 +22,8 @@
 	}
 </script>
 
-<li
-	class=" mx-auto grid w-full max-w-xl content-center gap-2 rounded p-4 text-center text-xl font-bold uppercase transition-opacity duration-500 sm:text-2xl xl:h-64"
+<div
+	class="mx-auto grid w-full max-w-xl content-center gap-2 rounded p-4 text-center text-xl font-bold uppercase transition-opacity duration-500 sm:text-2xl xl:h-64"
 	use:intersectionObserver={{ once: true, threshold: 1 }}
 	on:screenEnter={onScreenEnter}
 	on:screenExit={onScreenExit}
@@ -43,4 +43,4 @@
 		</strong>
 	</span>
 	<slot />
-</li>
+</div>
