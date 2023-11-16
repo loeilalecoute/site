@@ -4,7 +4,7 @@
 </script>
 
 <div class="container mx-auto px-4">
-	<Title text="ressources" />
+	<Title text="Ressources" />
 	<ul class="mt-8 px-4">
 		<Link href="/ressources/fiche-1-prise-de-son.pdf">Fiche n°1 : Prise de son</Link>
 		<Link href="/ressources/fiche-2-montage-et-mixage.pdf">Fiche n°2 : Montage et mixage</Link>

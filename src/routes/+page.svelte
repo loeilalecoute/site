@@ -11,7 +11,7 @@
 <HomeHero />
 <MainNav />
 
-<section class="mt-32 px-4">
+<section class="px-4 sm:mt-32">
 	<ul class="container mx-auto grid gap-16 xl:grid-cols-2 xl:gap-32">
 		<Card number={17}>années sur le terter</Card>
 		<Card number={26}>villes impliquées en Seine-Saint-Denis</Card>

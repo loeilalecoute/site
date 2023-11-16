@@ -19,7 +19,7 @@
 	</p>
 	<a
 		href="#navigation"
-		class="fixed bottom-2 left-1/2 h-10 w-10 -translate-x-1/2 p-2 text-2xl sm:bottom-8"
+		class="fixed bottom-2 left-1/2 h-10 w-10 -translate-x-1/2 rotate-180 p-2 text-4xl sm:bottom-8"
 	>
 		<!-- <svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@
 			stroke="currentColor"
 			stroke-width="1.5"
 			width="1em"
-			class=" -translate-x-1/2 -scale-y-100 animate-bounce stroke-white transition-opacity"
+			class=" -translate-x-1/2 animate-bounce stroke-yellow transition-opacity"
 			class:opacity-0={scrollY >= 10}
 			><g
 				><rect x="46.125" y="48" width="3.75" height="3.906" /><rect

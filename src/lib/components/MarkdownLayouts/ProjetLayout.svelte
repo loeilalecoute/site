@@ -66,75 +66,77 @@
 	{/if}
 </div>
 
-<Title text={city} />
-<div class="container mx-auto mt-8 px-4">
-	<div class="container mx-auto mt-8 justify-between gap-8 space-y-8 xl:flex">
-		<article class="prose prose-xl prose-invert mx-auto prose-h2:text-2xl">
-			<h2>{title}</h2>
-			<slot />
-		</article>
-		<ul class=" mx-auto max-w-prose divide-y">
-			{#if audios}
-				{#each audios as audio}
-					<li class="py-4">
-						<AudioCard {...audio} city={cityData?.name ?? city} />
-					</li>
-				{/each}
-			{/if}
-		</ul>
+<div class="flex min-h-screen flex-col pb-8">
+	<Title text={city} capitalize />
+	<div class="container mx-auto mb-4 mt-8 px-4">
+		<div class="container mx-auto mt-8 justify-between gap-8 space-y-8 xl:flex">
+			<article class="prose prose-xl prose-invert mx-auto prose-h2:text-2xl">
+				<h2>{title}</h2>
+				<slot />
+			</article>
+			<ul class=" mx-auto max-w-prose divide-y">
+				{#if audios}
+					{#each audios as audio}
+						<li class="py-4">
+							<AudioCard {...audio} city={cityData?.name ?? city} />
+						</li>
+					{/each}
+				{/if}
+			</ul>
+		</div>
 	</div>
+
+	<nav class="container mx-auto mt-auto flex justify-between px-4 pt-8 transition-colors">
+		<a
+			href="./{getSlug(pagination.previous)}"
+			class="group flex items-center gap-1 transition-colors focus-visible:text-yellow"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				width="1em"
+				height="1em"
+				class="hidden transition-transform delay-100 duration-300 ease-ease-elastic-out-4 group-hover:-translate-x-2 group-hover:delay-0 sm:block"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
+				/>
+			</svg>
+
+			<span
+				class="transition-transform duration-300 ease-ease-elastic-out-4 group-hover:-translate-x-2 group-hover:delay-100"
+				>{pagination.previous}</span
+			>
+		</a>
+		<a
+			href="./{getSlug(pagination.next)}"
+			class="group flex items-center gap-1 transition-colors focus-visible:text-yellow"
+		>
+			<span
+				class="transition-transform duration-300 ease-ease-elastic-out-4 group-hover:translate-x-2 group-hover:delay-100"
+				>{pagination.next}</span
+			>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width="1.5"
+				stroke="currentColor"
+				width="1em"
+				height="1em"
+				class="hidden transition-transform delay-100 duration-300 ease-ease-elastic-out-4 group-hover:translate-x-2 group-hover:delay-0 sm:block"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+				/>
+			</svg></a
+		>
+	</nav>
 </div>
-
-<nav class=" container mx-auto mt-12 flex justify-between px-4 transition-colors">
-	<a
-		href="./{getSlug(pagination.previous)}"
-		class="group flex items-center gap-1 transition-colors focus-visible:text-yellow"
-	>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke-width="1.5"
-			stroke="currentColor"
-			width="1em"
-			height="1em"
-			class="hidden transition-transform delay-100 duration-300 ease-ease-elastic-out-4 group-hover:-translate-x-2 group-hover:delay-0 sm:block"
-		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
-			/>
-		</svg>
-
-		<span
-			class="transition-transform duration-300 ease-ease-elastic-out-4 group-hover:-translate-x-2 group-hover:delay-100"
-			>{pagination.previous}</span
-		>
-	</a>
-	<a
-		href="./{getSlug(pagination.next)}"
-		class="group flex items-center gap-1 transition-colors focus-visible:text-yellow"
-	>
-		<span
-			class="transition-transform duration-300 ease-ease-elastic-out-4 group-hover:translate-x-2 group-hover:delay-100"
-			>{pagination.next}</span
-		>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke-width="1.5"
-			stroke="currentColor"
-			width="1em"
-			height="1em"
-			class="hidden transition-transform delay-100 duration-300 ease-ease-elastic-out-4 group-hover:translate-x-2 group-hover:delay-0 sm:block"
-		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-			/>
-		</svg></a
-	>
-</nav>

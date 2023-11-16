@@ -1,9 +1,9 @@
 <script>
 	import { citys, height, width } from '$lib/93.json'
+	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
 	import { intersectionObserver } from '$lib/actions/intersectionObserver.js'
 	import { sineOut } from 'svelte/easing'
 	import { draw } from 'svelte/transition'
-	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
 
 	/**code of the selected city
 	 * @type {string|undefined}

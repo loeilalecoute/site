@@ -76,7 +76,7 @@
 					{#if childs && childs.length > 0}
 						<ul class="space-y-2 px-2 pt-2">
 							{#each childs as { id, text }}
-								<li>
+								<li class="text-xs">
 									<a href="#{id}" class="line-clamp-1" class:text-white={current === id}>{text}</a>
 								</li>
 							{/each}

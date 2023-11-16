@@ -17,11 +17,11 @@
 	let buttonEl
 
 	let links = [
-		{ text: 'accueil', href: '/' },
-		{ text: 'à propos', href: '/apropos' },
-		{ text: 'ressources', href: '/ressources' },
-		{ text: 'portfolio', href: '/portfolio' },
-		{ text: 'contact', href: '/contact' }
+		{ text: 'Accueil', href: '/' },
+		{ text: 'À propos', href: '/apropos' },
+		{ text: 'Ressources', href: '/ressources' },
+		{ text: 'Portfolio', href: '/portfolio' },
+		{ text: 'Liens et Contact', href: '/contact' }
 	]
 
 	async function open() {
@@ -112,7 +112,7 @@
 					<a
 						href="{base}{href}"
 						style="--_index:{index};"
-						class="anim-from-bottom block capitalize transition-colors hover:text-yellow focus-visible:text-yellow"
+						class="anim-from-bottom block transition-colors hover:text-yellow focus-visible:text-yellow"
 						>{text}</a
 					>
 				</li>
