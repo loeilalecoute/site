@@ -9,5 +9,5 @@
 	<h1 class="text-4xl/none font-bold text-white sm:text-5xl/none md:text-7xl/none" class:capitalize>
 		{text}
 	</h1>
-	<span class="mt-8 block h-[1px] max-w-screen-xl bg-gray-50" aria-hidden="true" />
+	<span class="mt-8 block h-[1px] bg-gray-50" aria-hidden="true" />
 </div>

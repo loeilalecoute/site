@@ -17,7 +17,7 @@
 	<svg
 		role="figure"
 		viewBox={`0 0 500 500`}
-		class="  mx-auto mr-2 inline-block max-h-full max-w-full blur-sm"
+		class="  mx-auto mr-2 inline-block h-full max-h-full max-w-full blur-sm"
 	>
 		{#each citys as { code, points }}
 			<path
