@@ -1,136 +1,16 @@
 <script>
-	import Title from '$lib/components/Title.svelte'
+	import CardCounter from './CardCounter.svelte'
 </script>
 
-<Title text="Liens et Contacts" />
-<div class="container mx-auto flex items-center px-4 pt-8">
-	<article class=" space-y-8 px-4">
-		<p class="prose prose-xl prose-invert">
-			L’association l’œil à l’écoute n’est plus active depuis décembre 2023, pour accéder à
-			l’intégralité de ses archives sonores :
-		</p>
-		<ul class="max-w-prose space-y-2 text-lg">
-			<li>
-				<a
-					rel="external"
-					href="mailto:loeilalecoute@gmail.com"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
-						><path
-							fill="currentColor"
-							d="M4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.588 1.413T20 20H4Zm8-7L4 8v10h16V8l-8 5Zm0-2l8-5H4l8 5ZM4 8V6v12V8Z"
-						/></svg
-					>
-
-					loeilalecoute@gmail.com</a
-				>
-			</li>
-			<li>
-				<a
-					rel="external"
-					href="tel:0672612564"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"
-						><path
-							fill="currentColor"
-							d="m222.37 158.46l-47.11-21.11l-.13-.06a16 16 0 0 0-15.17 1.4a8.12 8.12 0 0 0-.75.56L134.87 160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16 16 0 0 0 1.32-15.06v-.12L97.54 33.64a16 16 0 0 0-16.62-9.52A56.26 56.26 0 0 0 32 80c0 79.4 64.6 144 144 144a56.26 56.26 0 0 0 55.88-48.92a16 16 0 0 0-9.51-16.62ZM176 208A128.14 128.14 0 0 1 48 80a40.2 40.2 0 0 1 34.87-40a.61.61 0 0 0 0 .12l21 47l-20.67 24.74a6.13 6.13 0 0 0-.57.77a16 16 0 0 0-1 15.7c9.06 18.53 27.73 37.06 46.46 46.11a16 16 0 0 0 15.75-1.14a8.44 8.44 0 0 0 .74-.56L168.89 152l47 21.05h.11A40.21 40.21 0 0 1 176 208Z"
-						/></svg
-					>
-					Guillaume Mahe: 06 72 61 25 64</a
-				>
-			</li>
-			<li>
-				<a
-					rel="external"
-					href="tel:0602105747"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"
-						><path
-							fill="currentColor"
-							d="m222.37 158.46l-47.11-21.11l-.13-.06a16 16 0 0 0-15.17 1.4a8.12 8.12 0 0 0-.75.56L134.87 160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16 16 0 0 0 1.32-15.06v-.12L97.54 33.64a16 16 0 0 0-16.62-9.52A56.26 56.26 0 0 0 32 80c0 79.4 64.6 144 144 144a56.26 56.26 0 0 0 55.88-48.92a16 16 0 0 0-9.51-16.62ZM176 208A128.14 128.14 0 0 1 48 80a40.2 40.2 0 0 1 34.87-40a.61.61 0 0 0 0 .12l21 47l-20.67 24.74a6.13 6.13 0 0 0-.57.77a16 16 0 0 0-1 15.7c9.06 18.53 27.73 37.06 46.46 46.11a16 16 0 0 0 15.75-1.14a8.44 8.44 0 0 0 .74-.56L168.89 152l47 21.05h.11A40.21 40.21 0 0 1 176 208Z"
-						/></svg
-					>
-					Hervé Bouchet: 06 02 10 57 47</a
-				>
-			</li>
-		</ul>
-
-		<ul class="max-w-prose space-y-2 text-lg">
-			<li>
-				<a
-					href="https://www.facebook.com/loeilalecoute"
-					target="_blank"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
-					><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
-						><path
-							fill="none"
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="1.5"
-							d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z"
-						/></svg
-					>
-					Facebook</a
-				>
-			</li>
-			<li>
-				<a
-					href="http://association-loeilalecoute.blogspot.com"
-					target="_blank"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 2048 2048"
-						><path
-							fill="currentColor"
-							d="M2048 0v1536H731l-475 475v-475H0V0h2048zM128 128v256h1792V128H128zm1792 1280V512H128v896h256v293l293-293h1243zm-640-768h512v640h-512V640zm128 512h256V768h-256v384zM256 768h896v128H256V768zm0 256h896v128H256v-128z"
-						/></svg
-					>Blog historique 2005-2015</a
-				>
-			</li>
-			<li>
-				<a
-					href="https://www.radiocampusparis.org/emission/v2m-loeil-a-lecoute"
-					target="_blank"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
-					><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
-						><path
-							fill="currentColor"
-							d="M11 22v-8.275q-.45-.275-.725-.712T10 12q0-.825.588-1.413T12 10q.825 0 1.413.588T14 12q0 .575-.275 1.025t-.725.7V22h-2Zm-5.9-2.75q-1.425-1.375-2.262-3.238T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.15-.838 4.025T18.9 19.25l-1.4-1.4q1.15-1.1 1.825-2.613T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 1.725.675 3.225t1.85 2.6L5.1 19.25Zm2.825-2.825q-.875-.825-1.4-1.963T6 12q0-2.5 1.75-4.25T12 6q2.5 0 4.25 1.75T18 12q0 1.325-.525 2.475t-1.4 1.95L14.65 15q.625-.575.988-1.35T16 12q0-1.65-1.175-2.825T12 8q-1.65 0-2.825 1.175T8 12q0 .9.363 1.663T9.35 15l-1.425 1.425Z"
-						/></svg
-					>
-
-					Liens vers l'intégralité des podcasts sur Radio Campus Paris</a
-				>
-			</li>
-			<li>
-				<a
-					href="http://association-loeilalecoute.blogspot.com/p/presse.html"
-					target="_blank"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"
-						><path
-							fill="currentColor"
-							d="M3.5 5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7Zm0 2a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-2ZM4 9V8h1v1H4Zm3.5-2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM1 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2a2 2 0 0 1 2 2v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 10.5V4Zm11.5 6.5a.5.5 0 0 1-.5-.5V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v6.5A1.5 1.5 0 0 0 3.5 12h9a1.5 1.5 0 0 0 1.5-1.5V6a1 1 0 0 0-1-1v5a.5.5 0 0 1-.5.5Z"
-						/></svg
-					>
-					Revue de presse (2005-2015)</a
-				>
-			</li>
-		</ul>
-	</article>
-	<aside class="hidden grow lg:block" aria-hidden="true">
+<section class="px-4 sm:mt-32">
+	<div class="container relative mx-auto grid gap-16 xl:grid-cols-2 xl:gap-32">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			id="svg1"
 			version="1.1"
 			viewBox="0 0 216.83 156.63"
 			style="--_index:2"
-			class="w-full"
+			class="absolute left-1/2 top-1/2 hidden w-[15rem] -translate-x-1/2 -translate-y-1/2 xl:block"
 		>
 			<g stroke-linecap="round">
 				<path
@@ -168,5 +48,9 @@
 				d="m44.489 96.08c-0.7-0.685-1.443-1.168-2.365-1.427-1.063-0.297-2.21-0.188-3.13 0.159-1.418 0.535-2.885 0.911-4.29 1.464-2.006 0.791-4.079 1.057-6.206 0.773-3.188-0.429-6.365-0.925-8.882-3.221-0.126-0.115-0.288-0.192-0.438-0.277-0.948-0.535-1.874-0.963-2.609-1.942-0.592-0.788-1.341-1.512-1.893-2.377-0.578-0.905-1.374-1.721-1.74-2.701-1.368-3.662-2.384-6.746-2.044-10.678l5e-3 -0.744c5e-3 -4.618 0.163-12.057 0.119-13.581-0.04-1.347 0.336-15.699 0.176-17.027-0.227-1.881-0.38-14.61-0.319-16.501 0.029-0.9347-0.211-1.7947-0.52-2.6414-0.285-0.7866-0.809-1.3013-1.745-1.236-0.47 0.032-0.938-0.0573-1.41-0.1226-1.71-0.236-2.816 0.856-2.804 2.5706 0.01 1.2014-0.093 2.4054-0.198 3.6054-0.204 2.3213-0.262 28.499 8e-3 30.828 0.17 1.467 0.578 2.939 0.3 4.435-0.144 0.768-0.218 5.185-0.252 9.024l-0.19-0.019c-0.056 0.203-0.04 0.428-0.034 0.643 0.056 2.22 0.069 4.441 0.205 6.657 0.047 0.772-0.04 1.596 0.412 2.331 0.523 0.845 0.851 1.808 0.735 2.785-0.072 0.605 0.069 1.121 0.43 1.409 0.847 0.672 1.242 1.65 1.81 2.487 0.782 1.151 2.088 2.016 2.164 3.596 1e-3 0.037 0.036 0.077 0.062 0.112 1.052 1.423 2.458 2.532 3.5 3.965 0.092 0.127 0.286 0.23 0.446 0.25 0.834 0.105 1.39 0.697 1.989 1.169 1.727 1.364 3.633 2.307 5.772 2.825 1.475 0.358 2.917 0.862 4.401 1.174 1.387 0.292 2.767 0.761 4.218 0.589 1.706-0.203 3.462-0.259 5.098-0.727 1.378-0.393 2.851-0.406 4.159-1.112 1.276-0.686 2.543-1.381 3.797-2.108 1.202-0.697 1.551-1.664 1.56-2.868 3e-3 -0.5 0.247-1.01-0.297-1.541"
 			/>
 		</svg>
-	</aside>
-</div>
+		<CardCounter number={17}>années sur le terter</CardCounter>
+		<CardCounter number={26}>villes impliquées en Seine-Saint-Denis</CardCounter>
+		<CardCounter number={8600}>participants</CardCounter>
+		<CardCounter number={670}>heures de diffusions</CardCounter>
+	</div>
+</section>

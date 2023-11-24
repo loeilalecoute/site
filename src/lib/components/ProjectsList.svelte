@@ -1,7 +1,7 @@
 <script>
 	import { citys } from '$lib/93.json'
 	import Map93 from './Map93.svelte'
-	import MainNavItem from './MainNavItem.svelte'
+	import Item from './ProjecListItem.svelte'
 	import { base } from '$app/paths'
 	import { getSlug } from '$lib/utils/getSlug.js'
 
@@ -18,7 +18,7 @@
 	<nav id="projets" class="-mt-[50vh]">
 		<ul class="space-y-[1em] px-4 pb-[50vmin] md:space-y-0">
 			{#each items as { name, code }}
-				<MainNavItem bind:selected {name} {code} href="{base}/projets/{getSlug(name)}" />
+				<Item bind:selected {name} {code} href="{base}/projets/{getSlug(name)}" />
 			{/each}
 		</ul>
 	</nav>

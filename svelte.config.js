@@ -29,7 +29,10 @@ const config = {
 			rehypePlugins: [rehypeSlug]
 		}),
 		vitePreprocess()
-	]
+	],
+	vitePlugin: {
+		inspector: true
+	}
 }
 
 export default config
