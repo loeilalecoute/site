@@ -4,6 +4,7 @@
 	import Toc from '../Toc.svelte'
 	import { citys, width, height } from '$lib/93.json'
 	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
+	import FooterSpace from '../FooterSpace.svelte'
 
 	/**@type{string}*/
 	export let title
@@ -43,3 +44,4 @@
 		<slot />
 	</article>
 </div>
+<FooterSpace />

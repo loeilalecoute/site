@@ -1,6 +1,7 @@
 <script>
 	import Link from './Link.svelte'
 	import Title from '$lib/components/Title.svelte'
+	import FooterSpace from '$lib/components/FooterSpace.svelte'
 </script>
 
 <div class="container mx-auto px-4">
@@ -55,3 +56,4 @@
 		</div>
 	</div>
 </div>
+<FooterSpace />

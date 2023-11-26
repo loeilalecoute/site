@@ -4,6 +4,7 @@
 	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
 	import { getSlug } from '$lib/utils/getSlug.js'
 	import AudioCard from '../AudioCard.svelte'
+	import FooterSpace from '../FooterSpace.svelte'
 	import Title from '../Title.svelte'
 
 	/**@type{string}*/
@@ -141,3 +142,4 @@
 		>
 	</nav>
 </div>
+<FooterSpace />

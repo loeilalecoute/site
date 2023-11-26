@@ -5,7 +5,7 @@
 </script>
 
 <Navigation />
-<main class="pb-40">
+<main>
 	<slot />
 	<Player />
 </main>
