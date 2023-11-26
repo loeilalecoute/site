@@ -5,7 +5,7 @@
 	export let href
 </script>
 
-<li class=" text-2xl/snug font-semibold">
+<li class=" text-lg font-semibold sm:text-2xl/snug">
 	<a
 		rel="internal"
 		href={base + href}
