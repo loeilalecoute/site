@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths'
 	import { citys as allCitys } from '$lib/93.json'
 	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
 	import { getSlug } from '$lib/utils/getSlug.js'
@@ -88,7 +89,7 @@
 
 	<nav class="container mx-auto mt-auto flex justify-between px-4 pt-8 transition-colors">
 		<a
-			href="./{getSlug(pagination.previous)}"
+			href="{base}/projets/{getSlug(pagination.previous)}/"
 			class="group flex items-center gap-1 transition-colors focus-visible:text-yellow"
 		>
 			<svg
@@ -114,7 +115,7 @@
 			>
 		</a>
 		<a
-			href="./{getSlug(pagination.next)}"
+			href="{base}/projets/{getSlug(pagination.next)}/"
 			class="group flex items-center gap-1 transition-colors focus-visible:text-yellow"
 		>
 			<span
