@@ -65,7 +65,7 @@ function createPlaceHolders() {
 	pathes.forEach((p) => {
 		const filePath = path.join(outputDir, p)
 		const outputPath = filePath.replace('-mini.jpg', '-placeholder.svg')
-		potrace.trace(filePath, function (err, svg) {
+		potrace.trace(filePath, { color: '#FCCC03' }, function (err, svg) {
 			if (err) throw err
 			fs.writeFileSync(outputPath, svg)
 		})
