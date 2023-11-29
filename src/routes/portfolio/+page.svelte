@@ -4,6 +4,7 @@
 	import potrace from 'potrace'
 	import 'photoswipe/dist/photoswipe.css'
 	import { onMount } from 'svelte'
+	import imagesData from '$lib/_imagesData.json'
 	const images = Array.from(Array(11), (_, i) => i)
 	onMount(() => {
 		let lightbox = new PhotoSwipeLightbox({
@@ -30,8 +31,8 @@
 		<a
 			href={`/portfolio/${index}-large.webp`}
 			class="aspect-video h-auto w-full snap-center"
-			data-pswp-width={1000}
-			data-pswp-height={666}
+			data-pswp-width={imagesData[index].width}
+			data-pswp-height={imagesData[index].height}
 			style="background-image: url('/portfolio/{index}-placeholder.svg')"
 		>
 			<img
@@ -40,6 +41,7 @@
 				alt="An alt text"
 				width="446"
 				height="251"
+				loading="lazy"
 			/>
 		</a>
 	{/each}

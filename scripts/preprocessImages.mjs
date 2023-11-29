@@ -1,14 +1,9 @@
-import fs from 'node:fs'
+import fs, { writeFileSync } from 'node:fs'
 import path from 'node:path'
 import sharp from 'sharp'
 import potrace from 'potrace'
 const inputDir = 'rawImages'
 const outputDir = 'static/portfolio'
-
-const imagesFormat = [
-	{ name: 'mini', width: 446, height: 251, fit: 'cover' },
-	{ name: 'large', width: 1200, height: 1200, fit: 'inside' }
-]
 
 /**
  * @param {string} dir
@@ -24,28 +19,49 @@ async function clearDir(dir) {
  * @param {string} input
  * @param {string} output
  */
-async function createImages(input, output) {
+async function createMiniatures(input, output) {
 	const pathes = fs.readdirSync(input)
 	let i = 0
 	for await (const p of pathes) {
 		const filePath = path.join(input, p)
-		for await (const { name, width, height, fit } of imagesFormat) {
-			await sharp(filePath)
-				.resize({ width, height, fit })
-				.toFormat('webp')
-				.toFile(path.join(output, `${i}-${name}.webp`))
-			await sharp(filePath)
-				.resize({ width, height, fit })
-				.toFormat('jpg')
-				.toFile(path.join(output, `${i}-${name}.jpg`))
-		}
+		await sharp(filePath)
+			.resize({ width: 446, height: 251, fit: 'cover' })
+			.toFormat('webp')
+			.toFile(path.join(output, `${i}-mini.webp`))
+		await sharp(filePath)
+			.resize({ width: 446, height: 251, fit: 'cover' })
+			.toFormat('jpg')
+			.toFile(path.join(output, `${i}-mini.jpg`))
 		i++
 	}
 }
 
+/**
+ * @param {string} input
+ * @param {string} output
+ */
+async function createLarges(input, output) {
+	const pathes = fs.readdirSync(input)
+	let i = 0
+	let imagesData = []
+	for await (const p of pathes) {
+		const filePath = path.join(input, p)
+		const { width, height } = await sharp(filePath)
+			.resize({ width: 1200, height: 1200, fit: 'inside' })
+			.toFormat('webp')
+			.toFile(path.join(output, `${i}-large.webp`))
+		await sharp(filePath)
+			.resize({ width: 1200, height: 1200, fit: 'inside' })
+			.toFormat('jpg')
+			.toFile(path.join(output, `${i}-large.jpg`))
+		imagesData.push({ width, height })
+		i++
+	}
+	writeFileSync('src/lib/_imagesData.json', JSON.stringify(imagesData), 'utf8')
+}
+
 function createPlaceHolders() {
 	const pathes = fs.readdirSync(outputDir).filter((p) => p.includes('-mini.jpg'))
-	console.log(pathes)
 	pathes.forEach((p) => {
 		const filePath = path.join(outputDir, p)
 		const outputPath = filePath.replace('-mini.jpg', '-placeholder.svg')
@@ -58,7 +74,8 @@ function createPlaceHolders() {
 
 async function main() {
 	clearDir(outputDir)
-	await createImages(inputDir, outputDir)
+	await createMiniatures(inputDir, outputDir)
+	await createLarges(inputDir, outputDir)
 	createPlaceHolders()
 }
 
