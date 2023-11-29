@@ -141,7 +141,7 @@
 		{
 			"code": "93350",
 			"name": "Le Bourget",
-			"project": false,
+			"project": true,
 			"points": [
 				[9757, 9137],
 				[9232, 8718],
@@ -296,7 +296,7 @@
 		{
 			"code": "93220",
 			"name": "Gagny",
-			"project": false,
+			"project": true,
 			"points": [
 				[20326, 16311],
 				[19054, 15541],

@@ -1,6 +1,6 @@
 ---
-title: Quand Verlaine fait de la radio
-city: la-courneuve
+title: Petite histoire de l'humanité
+city: le bourget
 ---
 
-L’association est intervenue sur plusieurs cycles au sein du centre social Césaria Evora situé dans le quartier Verlaine. Des ateliers ont permis à différents publics de réaliser du contenu radiophonique. Le public jeune a conçu une série d’émissions dénommée "VRLN Radio”, alors que le public FLE (français langue étrangère) a pu réaliser l’émission ELF radio.
+Extrait de la série documentaire “La Plaine”, l’émission s'intéresse à la fête de l’humanité au travers une galerie de personnages qui façonnent l’état d’esprit de ce grand rassemblement populaire qui s'est tenu pendant 20 ans au parc du Bourget.

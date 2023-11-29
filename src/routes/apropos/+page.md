@@ -16,9 +16,9 @@ Même si L’œil à l’écoute a déployé des actions par-delà le territoire
 
 Afin de mettre en œuvre ses activités, l’œil à l’écoute c’est appuyé sur des professionnels de la radio et des journalistes sans qui l’association n’aurait pas pu transmettre sa pédagogie par le faire
 
-**« Témoigner, c’est une manière d’agir ! »**, c’est pourquoi Guillaume et Hervé remercient l’ensemble des personnes qui ont contribué à faire vibrer cet espace d’expression citoyen et populaire : les participant.e.s, les intervenant.e.s, Émilie, Kréména, les partenaires associatifs et institutionnels, les collectivités territoriales et Radio Campus Paris.
+**« Témoigner, c’est une manière d’agir ! »**, c’est pourquoi Guillaume et Hervé remercient l’ensemble des personnes qui ont contribué à faire vibrer cet espace d’expression citoyen et populaire : les participant.e.s, les intervenant.e.s, Émily, Kréména, les partenaires associatifs et institutionnels, les collectivités territoriales et Radio Campus Paris.
 
-Lien: [12 ans d'éducation populaire et radiophonique](https://syntone.fr/loeil-a-lecoute-12-ans-deducation-populaire-et-radiophonique/)
+Lien: <a href="https://syntone.fr/loeil-a-lecoute-12-ans-deducation-populaire-et-radiophonique/" target="_blank">12 ans d'éducation populaire et radiophonique</a>
 
 ## Les actions
 
@@ -40,7 +40,7 @@ En 2016, l'action "Montreuil de vive(s) voix" a permis de réaliser 6 émissions
 
 Dans le cadre d’actions spécifiques, l’œil à l’écoute a développé des accompagnements autour du perfectionnement de la technique, de l’animation et de l’écriture. Le but était de permettre l’émergence d’un savoir-faire local pouvant à terme rendre l’activité autonome. Les réalisations effectuées durant ces ateliers ont pu être diffusées sur des radios partenaires, sur internet ou dans le cadre d’une sonorisation d’espace. En Seine-Saint-Denis, l’association a collaboré avec le festival de Saint-Denis, le festival villes des musiques du monde, Zebrock, la Poste, Cinéma 93, RATP…
 
-Les territoires d’interventions se sont élargis en Ile-de-France : Paris, Créteil, Fontenay-sous-Bois, Grand Paris Express, en régions : ateliers radiophoniques itinérants de France Info, festival des Suds à Arles, festival Musiques Métisses à Angoulême et enfin à l’international : Mali, Taïwan, Palestine, Maroc.
+Les territoires d’interventions se sont élargis en Ile-de-France : Paris, Créteil, Fontenay-sous-Bois, Grand Paris Express, en régions : ateliers radiophoniques itinérants de France Info, France Bleu, festival des Suds à Arles, festival Musiques Métisses à Angoulême et enfin à l’international : Mali, Taïwan, Palestine, Maroc.
 
 ### La malette pédagogique
 
