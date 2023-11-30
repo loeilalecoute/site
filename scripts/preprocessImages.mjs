@@ -15,7 +15,7 @@ async function main() {
 	const miniaturesData = await transformImages(fileNames, { width: 446, height: 251, fit: 'cover' })
 	const largesData = await transformImages(fileNames, { width: 1200, height: 1200, fit: 'inside' })
 	const miniaturesPathes = miniaturesData.map(({ hash }) => path.join(OUTPUTDIR, `${hash}.jpg`))
-	const placeHoldersHash = createPlaceHolders(miniaturesPathes, OUTPUTDIR, 'orange')
+	const placeHoldersHash = createPlaceHolders(miniaturesPathes, OUTPUTDIR, '#FCCC03')
 
 	createJson(path.join('src/lib', '_imagesData.json'), {
 		mini: miniaturesData,

@@ -28,13 +28,13 @@
 	{#each mini as { hash, width, height }, index}
 		<a
 			href={`/portfolio/${larges[index].hash}.webp`}
-			class="group aspect-video h-auto w-full snap-center"
+			class="text-red group aspect-video h-auto w-full snap-center"
 			data-pswp-width={larges[index].width}
 			data-pswp-height={larges[index].height}
 			style="background-image: url('/portfolio/{placeHolders[index].hash}.svg')"
 		>
 			<img
-				class="h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+				class="h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 				src="/portfolio/{hash}.webp"
 				alt="An alt text"
 				{width}
