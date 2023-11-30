@@ -119,7 +119,7 @@ function createJson(output, datas) {
  * @param {string} dir
  */
 async function clearDir(dir) {
-	const pathes = fs.readdirSync(dir)
+	const pathes = getAllImagesPathes(dir)
 	pathes.forEach(async (p) => {
 		fs.unlinkSync(path.join(dir, p))
 	})
@@ -130,7 +130,7 @@ async function clearDir(dir) {
  */
 function getAllImagesPathes(dir) {
 	const pathes = fs.readdirSync(dir)
-	return pathes.filter((p) => /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i.test(p))
+	return pathes.filter((p) => /\.(gif|jpe?g|tiff?|png|webp|bmp|svg)$/i.test(p))
 }
 
 main()
