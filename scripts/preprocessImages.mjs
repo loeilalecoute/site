@@ -1,9 +1,93 @@
-import fs, { writeFileSync } from 'node:fs'
+import fs from 'node:fs'
+import crypto from 'node:crypto'
 import path from 'node:path'
 import sharp from 'sharp'
 import potrace from 'potrace'
-const inputDir = 'rawImages'
-const outputDir = 'static/portfolio'
+
+const INPUTDIR = 'rawImages'
+const OUTPUTDIR = 'static/portfolio'
+/** @type {(keyof sharp.FormatEnum)[]} */
+const IMAGEFORMATS = ['jpg', 'webp']
+
+async function main() {
+	clearDir(OUTPUTDIR)
+	const fileNames = getAllImagesPathes(INPUTDIR).sort(() => 0.5 - Math.random())
+	const miniaturesData = await transformImages(fileNames, { width: 446, height: 251, fit: 'cover' })
+	const largesData = await transformImages(fileNames, { width: 1200, height: 1200, fit: 'inside' })
+	const miniaturesPathes = miniaturesData.map(({ hash }) => path.join(OUTPUTDIR, `${hash}.jpg`))
+	const placeHoldersHash = createPlaceHolders(miniaturesPathes, OUTPUTDIR, 'orange')
+
+	createJson(path.join('src/lib', '_imagesData.json'), {
+		mini: miniaturesData,
+		larges: largesData,
+		placeHolders: placeHoldersHash
+	})
+}
+
+/**
+ *
+ * @param {string[]} fileNames
+ * @param {sharp.ResizeOptions} options
+ *
+ */
+async function transformImages(fileNames, options) {
+	let imagesData = []
+	for await (const file of fileNames) {
+		const inputPath = path.join(INPUTDIR, file)
+		const datas = await transformImage(inputPath, OUTPUTDIR, options, IMAGEFORMATS)
+		imagesData.push(datas)
+	}
+	return imagesData
+}
+
+/**
+ * @param {string} filePath
+ * @param {string} outDir
+ * @param {sharp.ResizeOptions} options
+ * @param {(keyof sharp.FormatEnum)[]} formats
+ */
+async function transformImage(filePath, outDir, options, formats) {
+	const hash = crypto.randomUUID()
+	/**@type {{hash:string,width:number,height:number}} */
+	let data = undefined
+	for await (const format of formats) {
+		const fileName = `${hash}.${format}`
+		const { width, height } = await sharp(filePath)
+			.resize(options)
+			.toFormat(format)
+			.toFile(path.join(outDir, fileName))
+		if (!data) data = { hash, width, height }
+	}
+	return data
+}
+
+/**
+ * @param {string[]} filePathes
+ * @param {string} outDir
+ * @param {string} color
+ * @returns
+ */
+function createPlaceHolders(filePathes, outDir, color) {
+	const hashes = []
+	for (const filePath of filePathes) {
+		const hash = crypto.randomUUID()
+		potrace.trace(filePath, { color }, function (err, svg) {
+			if (err) throw err
+			fs.writeFileSync(path.join(outDir, `${hash}.svg`), svg)
+		})
+		hashes.push({ hash })
+	}
+	return hashes
+}
+
+/**
+ *
+ * @param {string} output
+ * @param {Object} datas
+ */
+function createJson(output, datas) {
+	fs.writeFileSync(output, JSON.stringify(datas), 'utf8')
+}
 
 /**
  * @param {string} dir
@@ -16,67 +100,11 @@ async function clearDir(dir) {
 }
 
 /**
- * @param {string} input
- * @param {string} output
+ * @param {string} dir
  */
-async function createMiniatures(input, output) {
-	const pathes = fs.readdirSync(input)
-	let i = 0
-	for await (const p of pathes) {
-		const filePath = path.join(input, p)
-		await sharp(filePath)
-			.resize({ width: 446, height: 251, fit: 'cover' })
-			.toFormat('webp')
-			.toFile(path.join(output, `${i}-mini.webp`))
-		await sharp(filePath)
-			.resize({ width: 446, height: 251, fit: 'cover' })
-			.toFormat('jpg')
-			.toFile(path.join(output, `${i}-mini.jpg`))
-		i++
-	}
-}
-
-/**
- * @param {string} input
- * @param {string} output
- */
-async function createLarges(input, output) {
-	const pathes = fs.readdirSync(input)
-	let i = 0
-	let imagesData = []
-	for await (const p of pathes) {
-		const filePath = path.join(input, p)
-		const { width, height } = await sharp(filePath)
-			.resize({ width: 1200, height: 1200, fit: 'inside' })
-			.toFormat('webp')
-			.toFile(path.join(output, `${i}-large.webp`))
-		await sharp(filePath)
-			.resize({ width: 1200, height: 1200, fit: 'inside' })
-			.toFormat('jpg')
-			.toFile(path.join(output, `${i}-large.jpg`))
-		imagesData.push({ width, height })
-		i++
-	}
-	writeFileSync('src/lib/_imagesData.json', JSON.stringify(imagesData), 'utf8')
-}
-
-function createPlaceHolders() {
-	const pathes = fs.readdirSync(outputDir).filter((p) => p.includes('-mini.jpg'))
-	pathes.forEach((p) => {
-		const filePath = path.join(outputDir, p)
-		const outputPath = filePath.replace('-mini.jpg', '-placeholder.svg')
-		potrace.trace(filePath, { color: '#FCCC03' }, function (err, svg) {
-			if (err) throw err
-			fs.writeFileSync(outputPath, svg)
-		})
-	})
-}
-
-async function main() {
-	clearDir(outputDir)
-	await createMiniatures(inputDir, outputDir)
-	await createLarges(inputDir, outputDir)
-	createPlaceHolders()
+function getAllImagesPathes(dir) {
+	const pathes = fs.readdirSync(dir)
+	return pathes.filter((p) => /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i.test(p))
 }
 
 main()
