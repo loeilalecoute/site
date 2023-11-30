@@ -8,6 +8,7 @@
 		let lightbox = new PhotoSwipeLightbox({
 			gallery: '#gallery',
 			children: 'a',
+			// showHideAnimationType: 'fade',
 			pswpModule: () => import('photoswipe')
 		})
 		lightbox.init()
@@ -28,13 +29,14 @@
 	{#each mini as { hash, width, height }, index}
 		<a
 			href={`/portfolio/${larges[index].hash}.webp`}
-			class="text-red group aspect-video h-auto w-full snap-center"
+			class="text-red group aspect-video h-auto w-full snap-center bg-contain bg-center bg-no-repeat"
 			data-pswp-width={larges[index].width}
 			data-pswp-height={larges[index].height}
+			data-cropped="true"
 			style="background-image: url('/portfolio/{placeHolders[index].hash}.svg')"
 		>
 			<img
-				class="h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+				class="h-full w-full object-contain opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 				src="/portfolio/{hash}.webp"
 				alt="An alt text"
 				{width}

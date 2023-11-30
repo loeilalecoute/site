@@ -12,10 +12,14 @@ const IMAGEFORMATS = ['jpg', 'webp']
 async function main() {
 	clearDir(OUTPUTDIR)
 	const fileNames = getAllImagesPathes(INPUTDIR).sort(() => 0.5 - Math.random())
-	const miniaturesData = await transformImages(fileNames, { width: 446, height: 251, fit: 'cover' })
+	const miniaturesData = await transformImages(fileNames, {
+		width: 446,
+		height: 251,
+		fit: 'inside'
+	})
 	const largesData = await transformImages(fileNames, { width: 1200, height: 1200, fit: 'inside' })
 	const miniaturesPathes = miniaturesData.map(({ hash }) => path.join(OUTPUTDIR, `${hash}.jpg`))
-	const placeHoldersHash = createPlaceHolders(miniaturesPathes, OUTPUTDIR, '#FCCC03')
+	const placeHoldersHash = await createPlaceHolders(miniaturesPathes, OUTPUTDIR, '#FCCC03')
 
 	createJson(path.join('src/lib', '_imagesData.json'), {
 		mini: miniaturesData,
@@ -60,6 +64,28 @@ async function transformImage(filePath, outDir, options, formats) {
 	}
 	return data
 }
+
+// /**
+//  * @param {string[]} filePathes
+//  * @param {string} outDir
+//  * @param {string} color
+//  * @returns
+//  */
+// async function createPlaceHolders(filePathes, outDir) {
+// 	const hashes = []
+// 	for (const filePath of filePathes) {
+// 		const hash = crypto.randomUUID()
+// 		/**@type {{hash:string,width:number,height:number}} */
+// 		const fileName = `${hash}.${'png'}`
+// 		await sharp(filePath)
+// 			.resize({ width: 223, height: 125 })
+// 			.png({ palette: true, colours: 8 })
+// 			.grayscale()
+// 			.toFile(path.join(outDir, fileName))
+// 		hashes.push({ hash })
+// 	}
+// 	return hashes
+// }
 
 /**
  * @param {string[]} filePathes
