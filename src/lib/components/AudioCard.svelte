@@ -52,9 +52,7 @@
 	</p>
 	{#if description}
 		<p class="prose prose-invert">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero impedit, voluptatum sed
-			excepturi voluptatibus deleniti sequi iure vel adipisci accusantium dignissimos ipsa amet
-			blanditiis maxime recusandae dolores voluptate, quam expedita.
+			{description}
 		</p>
 	{/if}
 	<div class="mt-4 flex items-center gap-4">

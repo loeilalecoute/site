@@ -1,6 +1,10 @@
 ---
 title: Sous le sable, Clichy !
 city: clichy-sous-bois
+audios:
+  - src: /audioassets/clichy/clichy-plage.mp3
+    title: Clichy plage
+    date: 2017
 ---
 
 L’association a pu animer une série d’ateliers à la maison de la jeunesse de
