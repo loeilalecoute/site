@@ -565,7 +565,7 @@
 			"top": 10432,
 			"bottom": 14290,
 			"center": [8746, 12361],
-			"project": false,
+			"project": true,
 			"name": "Pantin"
 		},
 		{
@@ -604,7 +604,7 @@
 			"top": 4146,
 			"bottom": 7140,
 			"center": [5532, 5343],
-			"project": false,
+			"project": true,
 			"name": "Pierrefitte-sur-Seine"
 		},
 		{
@@ -664,7 +664,7 @@
 			"top": 12633,
 			"bottom": 15570,
 			"center": [10895, 13901.5],
-			"project": false,
+			"project": true,
 			"name": "Romainville"
 		},
 		{
@@ -686,7 +686,7 @@
 			"top": 13720,
 			"bottom": 16927,
 			"center": [14476, 15323.5],
-			"project": false,
+			"project": true,
 			"name": "Rosny-sous-Bois"
 		},
 		{
@@ -713,7 +713,7 @@
 			"top": 6778,
 			"bottom": 12222,
 			"center": [5100, 9500],
-			"project": false,
+			"project": true,
 			"name": "Saint-Denis"
 		},
 		{
@@ -732,7 +732,7 @@
 			"top": 9831,
 			"bottom": 12321,
 			"center": [3200, 11076],
-			"project": false,
+			"project": true,
 			"name": "Saint-Ouen"
 		},
 		{
@@ -775,7 +775,7 @@
 			"top": 4397,
 			"bottom": 7428,
 			"center": [7211.5, 6212.5],
-			"project": false,
+			"project": true,
 			"name": "Stains"
 		},
 		{
@@ -808,7 +808,7 @@
 			"top": 0,
 			"bottom": 8337,
 			"center": [19022, 3200],
-			"project": false,
+			"project": true,
 			"name": "Tremblay-en-France"
 		},
 		{
@@ -856,7 +856,7 @@
 			"top": 12639,
 			"bottom": 15343,
 			"center": [16046, 14100],
-			"project": false,
+			"project": true,
 			"name": "Villemomble"
 		},
 		{
@@ -880,7 +880,7 @@
 			"top": 4099,
 			"bottom": 8570,
 			"center": [17871.5, 6000],
-			"project": false,
+			"project": true,
 			"name": "Villepinte"
 		},
 		{
