@@ -13,7 +13,7 @@
 			<li>
 				<a
 					rel="external"
-					href="mailto:loeilalecoute@gmail.com"
+					href="mailto:contact@loeilalecoute.fr"
 					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
@@ -23,7 +23,7 @@
 						/></svg
 					>
 
-					loeilalecoute@gmail.com</a
+					contact@loeilalecoute.fr</a
 				>
 			</li>
 			<li>
