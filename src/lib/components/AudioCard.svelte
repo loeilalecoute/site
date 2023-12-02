@@ -3,14 +3,12 @@
 	import {
 		audioData,
 		audioStore,
+		audioTime,
 		isLoading,
-		isPlaying,
-		audioTime
+		isPlaying
 	} from '$lib/stores/currentAudio.js'
 	import formatDuration from '$lib/utils/formatDuration.js'
-	import { onMount } from 'svelte'
 	import PlayIcon from './PlayIcon.svelte'
-	import { preloadData } from '$app/navigation'
 	/**@type {string}*/
 	export let title
 	/**@type {string}*/
@@ -48,7 +46,9 @@
 		{#if infos}
 			<span>{infos}</span>,
 		{/if}
-		<span>{date}</span>
+		{#if date}
+			<span>{date}</span>
+		{/if}
 	</p>
 	{#if description}
 		<p class="prose prose-invert">
