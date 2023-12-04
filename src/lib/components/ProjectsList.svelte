@@ -6,6 +6,11 @@
 	import { getSlug } from '$lib/utils/getSlug.js'
 
 	const items = citys.filter((c) => c.project)
+	items.sort((a, b) => {
+		const nameA = a.name.replace(/^(le |la |les |l\')/gi, '')
+		const nameB = b.name.replace(/^(le |la |les |l\')/gi, '')
+		return nameA.localeCompare(nameB)
+	})
 
 	/**@type {string|undefined}*/
 	let selected = undefined
