@@ -71,15 +71,17 @@
 <div class="flex min-h-screen flex-col pb-8">
 	<Title text={city} capitalize />
 	<div class="container mx-auto mb-4 mt-8 px-4">
-		<div class="container mx-auto mt-8 justify-between gap-8 space-y-8 xl:flex">
-			<article class="prose prose-xl prose-invert mx-auto prose-h2:text-2xl">
+		<div
+			class="container mx-auto mt-8 gap-8 xl:flex xl:items-start xl:justify-between xl:space-y-0"
+		>
+			<article class="prose prose-xl prose-invert mx-auto prose-h2:text-2xl xl:sticky xl:top-8">
 				<h2>{title}</h2>
 				<slot />
 			</article>
-			<ul class=" mx-auto max-w-prose divide-y">
+			<ul class="mx-auto max-w-prose divide-y">
 				{#if audios}
 					{#each audios as audio}
-						<li class="py-4">
+						<li class="min-w-[15ch] py-4 first:pt-0">
 							<AudioCard {...audio} city={cityData?.name ?? city} />
 						</li>
 					{/each}
