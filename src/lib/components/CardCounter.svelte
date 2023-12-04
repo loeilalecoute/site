@@ -18,7 +18,6 @@
 	function onScreenExit() {
 		visible = false
 		count = 0
-		console.log(123)
 	}
 </script>
 
