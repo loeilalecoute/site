@@ -7,7 +7,7 @@
 		{ text: 'À propos', href: '/apropos' },
 		{ text: 'Ressources', href: '/ressources' },
 		{ text: 'Portfolio', href: '/portfolio' },
-		{ text: 'Liens et Contacts', href: '/contact' }
+		{ text: 'Liens', href: '/liens' }
 	]
 </script>
 
