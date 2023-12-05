@@ -3,6 +3,7 @@
 	import { citys as allCitys } from '$lib/93.json'
 	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
 	import { getSlug } from '$lib/utils/getSlug.js'
+	import { compareCitys } from '$lib/utils/sortCitys.js'
 	import AudioCard from '../AudioCard.svelte'
 	import FooterSpace from '../FooterSpace.svelte'
 	import Title from '../Title.svelte'
@@ -15,6 +16,7 @@
 	export let city
 
 	let citys = allCitys.filter((el) => el.project)
+	citys.sort((a, b) => compareCitys(a.name, b.name))
 
 	/**@type {{previous:string,next:string}}*/
 	let pagination
@@ -72,7 +74,7 @@
 	<Title text={city} capitalize />
 	<div class="container mx-auto mb-4 mt-8 px-4">
 		<div
-			class="container mx-auto mt-8 gap-8 xl:flex xl:items-start xl:justify-between xl:space-y-0"
+			class="container mx-auto mt-8 gap-8 space-y-8 xl:flex xl:items-start xl:justify-between xl:space-y-0"
 		>
 			<article class="prose prose-xl prose-invert mx-auto prose-h2:text-2xl xl:sticky xl:top-8">
 				<h2>{title}</h2>

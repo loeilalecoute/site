@@ -4,13 +4,10 @@
 	import Item from './ProjecListItem.svelte'
 	import { base } from '$app/paths'
 	import { getSlug } from '$lib/utils/getSlug.js'
+	import { compareCitys } from '$lib/utils/sortCitys.js'
 
 	const items = citys.filter((c) => c.project)
-	items.sort((a, b) => {
-		const nameA = a.name.replace(/^(le |la |les |l\')/gi, '')
-		const nameB = b.name.replace(/^(le |la |les |l\')/gi, '')
-		return nameA.localeCompare(nameB)
-	})
+	items.sort((a, b) => compareCitys(a.name, b.name))
 
 	/**@type {string|undefined}*/
 	let selected = undefined
