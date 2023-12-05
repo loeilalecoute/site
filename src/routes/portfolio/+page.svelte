@@ -4,7 +4,8 @@
 	import 'photoswipe/dist/photoswipe.css'
 	import { onMount } from 'svelte'
 	import { mini, placeHolders, larges } from '$lib/_imagesData.json'
-	onMount(() => {
+
+	function initLightBox() {
 		let lightbox = new PhotoSwipeLightbox({
 			gallery: '#gallery',
 			children: 'a',
@@ -12,6 +13,27 @@
 			pswpModule: () => import('photoswipe')
 		})
 		lightbox.init()
+	}
+	function intersectionObserver() {
+		const pictureWrappers = document.querySelectorAll('#gallery a')
+		/**@type {IntersectionObserverCallback}*/
+		const callBack = (entries) => {
+			entries.forEach(({ isIntersecting, target }) => {
+				if (isIntersecting) target.setAttribute('data-onscreen', 'true')
+				else target.setAttribute('data-onscreen', 'false')
+			})
+		}
+		const observer = new IntersectionObserver(callBack, {
+			rootMargin: '-50%',
+			threshold: 0
+		})
+
+		pictureWrappers.forEach((p) => observer.observe(p))
+	}
+
+	onMount(() => {
+		initLightBox()
+		intersectionObserver()
 	})
 </script>
 
@@ -39,7 +61,7 @@
 				<source srcset="/portfolio/{hash}.webp" type="image/webp" />
 				<source srcset="/portfolio/{hash}.jpg" type="image/jpeg" />
 				<img
-					class="h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					class="h-full w-full object-cover transition-opacity delay-100 duration-700 group-data-[onscreen=false]:opacity-0 group-data-[onscreen=false]:delay-0 group-data-[onscreen=false]:duration-500"
 					src="/portfolio/{hash}.jpg"
 					alt="An alt text"
 					{width}
