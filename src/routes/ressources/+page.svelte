@@ -7,7 +7,7 @@
 <div class="container mx-auto px-4">
 	<Title text="Ressources" />
 	<div class="mt-8 items-start justify-center gap-8 space-y-16 px-4 lg:flex lg:space-y-0">
-		<ul class="grow">
+		<ul class="grid grow justify-items-start">
 			<Link href="/ressources/fiche-1-prise-de-son.pdf">Fiche n°1 : Prise de son</Link>
 			<Link href="/ressources/fiche-2-montage-et-mixage.pdf">Fiche n°2 : Montage et mixage</Link>
 			<Link href="/ressources/fiche-3-jeux-sonores.pdf">Fiche n°3 : Jeux sonores</Link>
