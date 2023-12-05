@@ -2,22 +2,27 @@ import fs from 'node:fs'
 import crypto from 'node:crypto'
 import path from 'node:path'
 import sharp from 'sharp'
-import potrace from 'potrace'
 
 const INPUTDIR = 'rawImages'
 const OUTPUTDIR = 'static/portfolio'
-/** @type {(keyof sharp.FormatEnum)[]} */
-const IMAGEFORMATS = ['jpg', 'webp']
 
 async function main() {
 	clearDir(OUTPUTDIR)
 	const fileNames = getAllImagesPathes(INPUTDIR).sort(() => 0.5 - Math.random())
-	const miniaturesData = await transformImages(fileNames, {
-		width: 446,
-		height: 251,
-		fit: 'inside'
-	})
-	const largesData = await transformImages(fileNames, { width: 1200, height: 1200, fit: 'inside' })
+	const miniaturesData = await transformImages(
+		fileNames,
+		{
+			width: 892,
+			height: 502,
+			fit: 'inside'
+		},
+		['jpg', 'webp']
+	)
+	const largesData = await transformImages(
+		fileNames,
+		{ width: 1200, height: 1200, fit: 'inside' },
+		['jpg']
+	)
 	const miniaturesPathes = miniaturesData.map(({ hash }) => path.join(OUTPUTDIR, `${hash}.jpg`))
 	const placeHoldersHash = await createPlaceHolders(miniaturesPathes, OUTPUTDIR, '#FCCC03')
 
@@ -32,13 +37,14 @@ async function main() {
  *
  * @param {string[]} fileNames
  * @param {sharp.ResizeOptions} options
+ * @param {(keyof sharp.FormatEnum)[]} formats
  *
  */
-async function transformImages(fileNames, options) {
+async function transformImages(fileNames, options, formats) {
 	let imagesData = []
 	for await (const file of fileNames) {
 		const inputPath = path.join(INPUTDIR, file)
-		const datas = await transformImage(inputPath, OUTPUTDIR, options, IMAGEFORMATS)
+		const datas = await transformImage(inputPath, OUTPUTDIR, options, formats)
 		imagesData.push(datas)
 	}
 	return imagesData
@@ -65,42 +71,22 @@ async function transformImage(filePath, outDir, options, formats) {
 	return data
 }
 
-// /**
-//  * @param {string[]} filePathes
-//  * @param {string} outDir
-//  * @param {string} color
-//  * @returns
-//  */
-// async function createPlaceHolders(filePathes, outDir) {
-// 	const hashes = []
-// 	for (const filePath of filePathes) {
-// 		const hash = crypto.randomUUID()
-// 		/**@type {{hash:string,width:number,height:number}} */
-// 		const fileName = `${hash}.${'png'}`
-// 		await sharp(filePath)
-// 			.resize({ width: 223, height: 125 })
-// 			.png({ palette: true, colours: 8 })
-// 			.grayscale()
-// 			.toFile(path.join(outDir, fileName))
-// 		hashes.push({ hash })
-// 	}
-// 	return hashes
-// }
-
 /**
  * @param {string[]} filePathes
  * @param {string} outDir
  * @param {string} color
  * @returns
  */
-function createPlaceHolders(filePathes, outDir, color) {
+async function createPlaceHolders(filePathes, outDir) {
 	const hashes = []
-	for (const filePath of filePathes) {
+	for await (const filePath of filePathes) {
 		const hash = crypto.randomUUID()
-		potrace.trace(filePath, { color }, function (err, svg) {
-			if (err) throw err
-			fs.writeFileSync(path.join(outDir, `${hash}.svg`), svg)
-		})
+		const fileName = `${hash}.${'png'}`
+		await sharp(filePath)
+			.resize(800)
+			.png({ palette: true, colors: 4 })
+			.tint([126, 101, 3])
+			.toFile(path.join(outDir, fileName))
 		hashes.push({ hash })
 	}
 	return hashes
