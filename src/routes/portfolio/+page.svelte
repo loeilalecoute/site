@@ -4,6 +4,7 @@
 	import 'photoswipe/dist/photoswipe.css'
 	import { onMount } from 'svelte'
 	import { mini, placeHolders, larges } from '$lib/_imagesData.json'
+	import Title from '$lib/components/Title.svelte'
 
 	function initLightBox() {
 		let lightbox = new PhotoSwipeLightbox({
@@ -45,7 +46,7 @@
 </svelte:head>
 
 <div
-	class="grid h-screen w-full snap-both snap-mandatory grid-cols-[repeat(3,896px)] gap-8 overflow-auto p-32 pb-40"
+	class="grid h-screen w-full snap-both snap-mandatory gap-8 overflow-auto px-8 py-[40vh] md:grid-cols-[repeat(3,min(896px,80vw))] md:p-32"
 	id="gallery"
 >
 	{#each mini as { hash, width, height }, index}
