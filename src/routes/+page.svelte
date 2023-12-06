@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Accueil</title>
+	<title>L'œil à l'écoute</title>
 </svelte:head>
 
 <HomeHero />

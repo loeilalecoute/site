@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte'
 	/**@type {string}*/
 	export let text
 

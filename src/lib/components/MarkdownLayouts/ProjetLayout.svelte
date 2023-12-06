@@ -1,6 +1,7 @@
 <script>
 	import { base } from '$app/paths'
 	import { citys as allCitys } from '$lib/93.json'
+	import { capitalize } from '$lib/utils/capitalize.js'
 	import { getPathFromPoints } from '$lib/utils/getPathFromPoints.js'
 	import { getSlug } from '$lib/utils/getSlug.js'
 	import { compareCitys } from '$lib/utils/sortCitys.js'
@@ -53,6 +54,9 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{title} • {capitalize(city)} • L'œil à l'écoute</title>
+</svelte:head>
 <div class="fixed inset-0 -z-50 p-16 text-center">
 	{#if svgData}
 		<svg
@@ -115,16 +119,16 @@
 			</svg>
 
 			<span
-				class="transition-transform duration-300 ease-ease-elastic-out-4 group-hover:-translate-x-2 group-hover:delay-100"
+				class="max-w-[35vw] overflow-hidden text-ellipsis whitespace-nowrap transition-transform duration-300 ease-ease-elastic-out-4 group-hover:-translate-x-2 group-hover:delay-100"
 				>{pagination.previous}</span
 			>
 		</a>
 		<a
 			href="{base}/projets/{getSlug(pagination.next)}/"
-			class="group flex items-center gap-1 transition-colors focus-visible:text-yellow"
+			class="group flex items-center gap-1 overflow-hidden transition-colors focus-visible:text-yellow"
 		>
 			<span
-				class="transition-transform duration-300 ease-ease-elastic-out-4 group-hover:translate-x-2 group-hover:delay-100"
+				class="max-w-[35vw] overflow-hidden text-ellipsis whitespace-nowrap transition-transform duration-300 ease-ease-elastic-out-4 group-hover:translate-x-2 group-hover:delay-100"
 				>{pagination.next}</span
 			>
 			<svg

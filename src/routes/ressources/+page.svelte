@@ -4,6 +4,10 @@
 	import FooterSpace from '$lib/components/FooterSpace.svelte'
 </script>
 
+<svelte:head>
+	<title>Ressources • L'œil à l'écoute</title>
+</svelte:head>
+
 <div class="container mx-auto px-4">
 	<Title text="Ressources" />
 	<div class="mt-8 items-start justify-center gap-8 space-y-16 px-4 lg:flex lg:space-y-0">

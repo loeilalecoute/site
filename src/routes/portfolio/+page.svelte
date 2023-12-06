@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<title>Portfolio</title>
+	<title>Portfolio • L'œil à l'écoute</title>
 	{#each placeHolders as { hash }}
 		<link rel="preload" as="image" href="/portfolio/{hash}.png" />
 	{/each}

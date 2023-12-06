@@ -2,6 +2,9 @@
 	import Title from '$lib/components/Title.svelte'
 </script>
 
+<svelte:head>
+	<title>Liens • L'œil à l'écoute</title>
+</svelte:head>
 <Title text="Liens et Contacts" />
 <div class="container mx-auto flex items-center px-4 pt-8">
 	<article class=" space-y-8 px-4">

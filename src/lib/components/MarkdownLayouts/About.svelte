@@ -11,9 +11,8 @@
 </script>
 
 <svelte:head>
-	<title>À propos</title>
+	<title>À propos • L'œil à l'écoute</title>
 </svelte:head>
-
 <div class="fixed inset-0 -z-50 p-16 text-center">
 	<svg
 		role="figure"
