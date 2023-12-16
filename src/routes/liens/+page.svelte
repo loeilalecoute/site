@@ -5,7 +5,7 @@
 <svelte:head>
 	<title>Liens • L'œil à l'écoute</title>
 </svelte:head>
-<Title text="Liens et Contacts" />
+<Title text="Liens" />
 <div class="container mx-auto flex items-center px-4 pt-8">
 	<article class=" space-y-8 px-4">
 		<p class="prose prose-xl prose-invert">

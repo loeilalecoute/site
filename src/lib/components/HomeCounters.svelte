@@ -2,7 +2,7 @@
 	import CardCounter from './CardCounter.svelte'
 </script>
 
-<section class="px-4 sm:mt-32">
+<section class="px-4 sm:mt-32" id="end">
 	<div class="container relative mx-auto grid gap-16 xl:grid-cols-2 xl:gap-32">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

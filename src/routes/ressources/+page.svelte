@@ -2,6 +2,8 @@
 	import Link from './Link.svelte'
 	import Title from '$lib/components/Title.svelte'
 	import FooterSpace from '$lib/components/FooterSpace.svelte'
+	import { intersectionObserver } from '$lib/actions/intersectionObserver.js'
+	let infosBoxVisible = false
 </script>
 
 <svelte:head>
@@ -34,7 +36,13 @@
 				>Présentation de la mallette pédagogique</Link
 			>
 		</ul>
-		<div class="sticky top-16 basis-96 rounded border border-dashed bg-gray-800 px-4 py-2">
+		<div
+			class="sticky top-16 basis-96 rounded border border-dashed bg-gray-800 px-4 py-2"
+			class:anim-from-bottom={infosBoxVisible}
+			class:opacity-0={!infosBoxVisible}
+			use:intersectionObserver
+			on:screenEnter={() => (infosBoxVisible = true)}
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="1.5em"
