@@ -125,7 +125,7 @@
 		</a>
 		<a
 			href="{base}/projets/{getSlug(pagination.next)}/"
-			class="group flex items-center gap-1 overflow-hidden transition-colors focus-visible:text-yellow"
+			class="group flex items-center gap-1 transition-colors focus-visible:text-yellow"
 		>
 			<span
 				class="max-w-[35vw] overflow-hidden text-ellipsis whitespace-nowrap transition-transform duration-300 ease-ease-elastic-out-4 group-hover:translate-x-2 group-hover:delay-100"
