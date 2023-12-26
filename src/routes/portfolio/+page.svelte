@@ -1,11 +1,11 @@
 <script>
+	import { larges, mini, placeHolders } from '$lib/_imagesData.json'
+	import 'photoswipe/dist/photoswipe.css'
 	// @ts-ignore
 	import PhotoSwipeLightbox from 'photoswipe/lightbox'
-	import 'photoswipe/dist/photoswipe.css'
 	import { onMount } from 'svelte'
-	import { mini, placeHolders, larges } from '$lib/_imagesData.json'
-	import Title from '$lib/components/Title.svelte'
 
+	let zoom = 1
 	function initLightBox() {
 		let lightbox = new PhotoSwipeLightbox({
 			gallery: '#gallery',
@@ -15,26 +15,9 @@
 		})
 		lightbox.init()
 	}
-	function intersectionObserver() {
-		const pictureWrappers = document.querySelectorAll('#gallery a')
-		/**@type {IntersectionObserverCallback}*/
-		const callBack = (entries) => {
-			entries.forEach(({ isIntersecting, target }) => {
-				if (isIntersecting) target.setAttribute('data-onscreen', 'true')
-				else target.setAttribute('data-onscreen', 'false')
-			})
-		}
-		const observer = new IntersectionObserver(callBack, {
-			rootMargin: '-50%',
-			threshold: 0
-		})
-
-		pictureWrappers.forEach((p) => observer.observe(p))
-	}
 
 	onMount(() => {
 		initLightBox()
-		intersectionObserver()
 	})
 </script>
 
@@ -46,8 +29,9 @@
 </svelte:head>
 
 <div
-	class="grid h-screen w-full snap-both snap-mandatory gap-8 overflow-auto px-8 py-[40vh] md:grid-cols-[repeat(3,min(896px,80vw))] md:p-32"
+	class="grid h-screen w-full snap-both snap-mandatory gap-8 overflow-auto px-8 py-[40vh] transition-all duration-300 md:grid-cols-[repeat(3,calc(896px_*_var(--zoom)))] md:p-32"
 	id="gallery"
+	style="--zoom:{zoom}"
 >
 	{#each mini as { hash, width, height }, index}
 		<a
@@ -62,7 +46,7 @@
 				<source srcset="/portfolio/{hash}.webp" type="image/webp" />
 				<source srcset="/portfolio/{hash}.jpg" type="image/jpeg" />
 				<img
-					class="h-full w-full object-cover transition-opacity delay-100 duration-700 group-data-[onscreen=false]:opacity-0 group-data-[onscreen=false]:delay-0 group-data-[onscreen=false]:duration-500"
+					class="h-full w-full object-cover opacity-0 transition-opacity delay-100 duration-700 group-hover:opacity-100"
 					src="/portfolio/{hash}.jpg"
 					alt="An alt text"
 					{width}
@@ -72,6 +56,52 @@
 			</picture>
 		</a>
 	{/each}
+</div>
+<div
+	class="-translte-x-1/2 fixed left-1/2 top-9 hidden gap-1 rounded-full border border-gray-300/10 bg-gray-900/90 px-1 sm:flex"
+>
+	<button
+		class="group rounded-full p-2 text-3xl text-gray-200 hover:text-gray-50 focus-visible:text-gray-50 disabled:pointer-events-none disabled:opacity-25"
+		aria-label="dézommer"
+		on:click={() => (zoom = zoom * 0.9)}
+		disabled={zoom < 0.5}
+	>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke-width="1.5"
+			stroke="currentColor"
+			class=" h-6 w-6 transition-transform duration-300 group-hover:scale-105 group-focus-visible:scale-105"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607ZM13.5 10.5h-6"
+			/>
+		</svg>
+	</button>
+	<button
+		class="group rounded-full p-2 text-3xl text-gray-200 hover:text-gray-50 focus-visible:text-gray-50 disabled:pointer-events-none disabled:opacity-25"
+		aria-label="zoomer"
+		on:click={() => (zoom = zoom * 1.2)}
+		disabled={zoom > 1.4}
+	>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke-width="1.5"
+			stroke="currentColor"
+			class=" h-6 w-6 transition-transform duration-300 group-hover:scale-105 group-focus-visible:scale-105"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607ZM10.5 7.5v6m3-3h-6"
+			/>
+		</svg>
+	</button>
 </div>
 
 <style>
