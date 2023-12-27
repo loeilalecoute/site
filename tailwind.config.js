@@ -76,6 +76,55 @@ export default {
 				'ease-elastic-in-out-3': 'cubic-bezier(.5, -.5, .1, 1.5)',
 				'ease-elastic-in-out-4': 'cubic-bezier(.5, -.7, .1, 1.5)',
 				'ease-elastic-in-out-5': 'cubic-bezier(.5, -.9, .1, 1.5)'
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						a: {
+							fontWeight: '400'
+						},
+						strong: {
+							fontWeight: '800'
+						},
+						dt: {
+							fontWeight: '800'
+						},
+						blockquote: {
+							fontWeight: '500',
+							fontStyle: 'normal'
+						},
+						h1: {
+							fontWeight: '800'
+						},
+						'h1 strong': {
+							fontWeight: '800'
+						},
+						h2: {
+							fontWeight: '800'
+						},
+						h3: {
+							fontWeight: '800'
+						},
+						'h3 strong': {
+							fontWeight: '800'
+						},
+						h4: {
+							fontWeight: '400'
+						},
+						'h4 strong': {
+							fontWeight: '400'
+						},
+						kbd: {
+							fontWeight: '400'
+						},
+						code: {
+							fontWeight: '400'
+						},
+						'thead th': {
+							fontWeight: '800'
+						}
+					}
+				}
 			}
 		}
 	},

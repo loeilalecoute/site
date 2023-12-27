@@ -17,7 +17,7 @@
 				<a
 					rel="external"
 					href="mailto:contact@loeilalecoute.fr"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
+					class="flex items-center gap-1 transition-colors hover:text-yellow focus-visible:text-yellow"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
 						><path
@@ -33,7 +33,7 @@
 				<a
 					rel="external"
 					href="tel:0672612564"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
+					class="flex items-center gap-1 transition-colors hover:text-yellow focus-visible:text-yellow"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"
 						><path
@@ -48,7 +48,7 @@
 				<a
 					rel="external"
 					href="tel:0602105747"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
+					class="flex items-center gap-1 transition-colors hover:text-yellow focus-visible:text-yellow"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"
 						><path
@@ -66,7 +66,7 @@
 				<a
 					href="https://www.facebook.com/loeilalecoute"
 					target="_blank"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
+					class="flex items-center gap-1 transition-colors hover:text-yellow focus-visible:text-yellow"
 					><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
 						><path
 							fill="none"
@@ -84,7 +84,7 @@
 				<a
 					href="http://association-loeilalecoute.blogspot.com"
 					target="_blank"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
+					class="flex items-center gap-1 transition-colors hover:text-yellow focus-visible:text-yellow"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 2048 2048"
 						><path
@@ -98,7 +98,7 @@
 				<a
 					href="https://www.radiocampusparis.org/emission/v2m-loeil-a-lecoute"
 					target="_blank"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
+					class="flex items-center gap-1 transition-colors hover:text-yellow focus-visible:text-yellow"
 					><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
 						><path
 							fill="currentColor"
@@ -113,7 +113,7 @@
 				<a
 					href="http://association-loeilalecoute.blogspot.com/p/presse.html"
 					target="_blank"
-					class="flex items-center gap-1 font-semibold transition-colors hover:text-yellow focus-visible:text-yellow"
+					class="flex items-center gap-1 transition-colors hover:text-yellow focus-visible:text-yellow"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"
 						><path

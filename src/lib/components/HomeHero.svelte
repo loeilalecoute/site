@@ -10,7 +10,7 @@
 >
 	<LogoLole />
 	<p
-		class=" my-auto mb-auto grid text-center text-2xl font-semibold uppercase leading-tight sm:text-left lg:text-3xl xl:text-4xl 2xl:text-5xl"
+		class=" my-auto mb-auto grid text-center text-2xl font-bold uppercase leading-tight sm:text-left lg:text-3xl xl:text-4xl 2xl:text-5xl"
 	>
 		<span class="anim-from-bottom block" style="--_index:0">2005-2023</span>
 		<span class="anim-from-bottom block" style="--_index:1">une mémoire</span>

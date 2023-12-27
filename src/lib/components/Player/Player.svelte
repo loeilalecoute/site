@@ -15,7 +15,7 @@
 				class="pointer-events-none absolute bottom-[calc(100%_+_1.5rem)] translate-y-10 rounded-sm bg-gray-950 px-3 py-4 opacity-0 backdrop-blur-sm transition-all group-hover:pointer-events-auto group-hover:grid group-hover:translate-y-0 group-hover:opacity-100"
 				aria-hidden="true"
 			>
-				<span class="whitespace-nowrap font-semibold text-blue sm:text-lg">{$audioData.title}</span>
+				<span class="whitespace-nowrap text-blue sm:text-lg">{$audioData.title}</span>
 				<span>
 					{$audioData.city},
 					{#if $audioData.infos}
@@ -24,8 +24,7 @@
 					{$audioData.date}</span
 				>
 			</div>
-			<span
-				class="overflow-hidden text-ellipsis whitespace-nowrap font-semibold text-blue sm:text-lg"
+			<span class="overflow-hidden text-ellipsis whitespace-nowrap text-blue sm:text-lg"
 				>{$audioData.title}</span
 			>
 			<span>

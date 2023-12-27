@@ -9,7 +9,7 @@
 </script>
 
 <li
-	class=" inline-block text-lg font-semibold sm:text-2xl/snug"
+	class=" inline-block text-lg sm:text-2xl/snug"
 	use:intersectionObserver
 	on:screenEnter={() => {
 		visible = true

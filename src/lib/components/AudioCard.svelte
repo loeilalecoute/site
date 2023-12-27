@@ -41,7 +41,7 @@
 </script>
 
 <div class="grid items-center">
-	<h3 class="text-lg font-semibold text-blue">{title}</h3>
+	<h3 class="text-lg text-blue">{title}</h3>
 	<p class="">
 		{#if infos}
 			<span>{infos}</span>,
