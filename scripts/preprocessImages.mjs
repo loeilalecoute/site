@@ -83,7 +83,7 @@ async function createPlaceHolders(filePathes, outDir) {
 		const hash = crypto.randomUUID()
 		const fileName = `${hash}.${'png'}`
 		await sharp(filePath)
-			.resize(800)
+			.resize(400)
 			.png({ palette: true, colors: 4 })
 			.tint([126, 101, 3])
 			.toFile(path.join(outDir, fileName))
