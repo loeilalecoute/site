@@ -63,7 +63,7 @@
 				href="https://lessoeurschevalme.ultra-book.com/"
 				rel="external"
 				class="font-bold transition-colors hover:text-yellow focus-visible:text-yellow"
-				>les Soeurs Chevalme</a
+				target="_blank">les Soeurs Chevalme</a
 			>
 		</div>
 	</div>
