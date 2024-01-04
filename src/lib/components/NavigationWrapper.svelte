@@ -1,8 +1,6 @@
 <script>
 	import { afterNavigate } from '$app/navigation'
-	import { base } from '$app/paths'
 	import { trapFocus } from '$lib/actions/trapFocus.js'
-	import { slide } from 'svelte/transition'
 	import { tweened } from 'svelte/motion'
 	import Navigation from './Navigation.svelte'
 
