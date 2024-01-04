@@ -1,13 +1,17 @@
 @font-face {
 	font-family: Frequenz;
-	src: url('/fonts/frequenz/FrequenzTrial-Regular.ttf') format('trueType');
-	font-weight: 400;
+	src:
+		url('/fonts/frequenz/Frequenz_W-Regular.woff2') format('woff2'),
+		url('/fonts/frequenz/Frequenz_W-Regular.woff') format('woff');
+	font-weight: 100 500;
 }
 
 @font-face {
 	font-family: Frequenz;
-	src: url('/fonts/frequenz/FrequenzTrial-Bold.ttf') format('trueType');
-	font-weight: 800;
+	src:
+		url('/fonts/frequenz/Frequenz_W-Bold.woff2') format('woff2'),
+		url('/fonts/frequenz/Frequenz_W-Bold.woff') format('woff');
+	font-weight: 500 900;
 }
 
 @tailwind base;

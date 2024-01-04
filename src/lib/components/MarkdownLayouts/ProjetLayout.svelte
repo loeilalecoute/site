@@ -74,7 +74,7 @@
 	{/if}
 </div>
 
-<div class="flex min-h-screen flex-col pb-8">
+<div class="flex min-h-[calc(100vh-6rem)] flex-col pb-8">
 	<Title text={city} capitalize />
 	<div class="container mx-auto mb-4 mt-8 px-4">
 		<div
