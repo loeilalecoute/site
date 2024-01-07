@@ -33,5 +33,3 @@ jobs:
             **/.git*/**
             **/node_modules/**
             **/audioassets/*
-            **/rawImages/*
-            **/portfolio/*
