@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "vite dev ",
 		"host": "vite dev --host",
-		"processImages": "node scripts/preprocessImages.mjs",
+		"prebuild": "node scripts/preprocessImages.mjs",
 		"build": "vite build",
 		"postbuild": "npx svelte-sitemap --domain https://loeilalecoute.fr",
 		"preview": "vite preview",
