@@ -3,10 +3,10 @@
 	export let factor
 
 	function handleZoom() {
-		factor += 0.3
+		factor += 0.2
 	}
 	function handleUnzoom() {
-		factor -= 0.3
+		factor -= 0.2
 	}
 </script>
 

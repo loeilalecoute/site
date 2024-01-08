@@ -8,8 +8,6 @@
 
 	let zoomFactor = 0.5
 
-	$: zoom = zoomFactor === 1 ? 1 : 1 - Math.pow(2, -10 * zoomFactor)
-
 	function initLightBox() {
 		let lightbox = new PhotoSwipeLightbox({
 			gallery: '#gallery',
@@ -34,7 +32,7 @@
 
 <ZoomControls bind:factor={zoomFactor} />
 <div
-	class="grid h-screen w-full snap-both snap-mandatory gap-12 overflow-auto px-8 py-[40vh] transition-all duration-300 md:grid-cols-[repeat(3,calc(30vw_*_var(--zoom)_+_50vw))] md:p-32 lg:gap-8"
+	class="grid h-screen w-full snap-both snap-mandatory gap-12 overflow-auto px-8 py-[40vh] transition-all duration-300 md:grid-cols-[repeat(13,calc(30vw_*_var(--zoom)_+_35vw))] md:p-32 lg:gap-8"
 	id="gallery"
 	style="--zoom:{zoomFactor}"
 >
