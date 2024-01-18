@@ -1,10 +1,11 @@
 <script>
 	import { larges, mini, placeHolders } from '$lib/_imagesData.json'
+	import FooterSpace from '$lib/components/FooterSpace.svelte'
+	import { audioStore } from '$lib/stores/currentAudio'
 	import 'photoswipe/dist/photoswipe.css'
 	// @ts-ignore
 	import PhotoSwipeLightbox from 'photoswipe/lightbox'
 	import { onMount } from 'svelte'
-	import ZoomControls from './ZoomControls.svelte'
 
 	let zoomFactor = 0.5
 
@@ -30,9 +31,8 @@
 	{/each}
 </svelte:head>
 
-<ZoomControls bind:factor={zoomFactor} />
 <div
-	class="grid h-screen w-full snap-both snap-mandatory gap-12 overflow-auto px-8 py-[40vh] transition-all duration-300 md:grid-cols-[repeat(13,calc(30vw_*_var(--zoom)_+_35vw))] md:p-32 lg:gap-8"
+	class="grid w-full gap-4 overflow-auto px-4 py-8 transition-all duration-300 sm:grid-cols-2 md:grid-cols-4"
 	id="gallery"
 	style="--zoom:{zoomFactor}"
 >
@@ -60,6 +60,6 @@
 		</a>
 	{/each}
 </div>
-
-<style>
-</style>
+{#if $audioStore}
+	<FooterSpace />
+{/if}
