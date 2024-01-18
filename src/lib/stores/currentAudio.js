@@ -93,7 +93,6 @@ const defineAudioStore = () => {
 	 */
 	const loadAudio = (src, title, date, city, infos) => {
 		const audio = new Audio()
-		console.log(audio)
 		_isLoading.set(true)
 		_audioData.set({ src, title, date, city, infos })
 
