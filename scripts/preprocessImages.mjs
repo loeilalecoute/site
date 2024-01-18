@@ -1,5 +1,4 @@
 import fs from 'node:fs'
-import crypto from 'node:crypto'
 import path from 'node:path'
 import sharp from 'sharp'
 
@@ -50,6 +49,7 @@ async function transformImages(fileNames, options, formats) {
 	return imagesData
 }
 
+let transformedIndex = 0
 /**
  * @param {string} filePath
  * @param {string} outDir
@@ -57,7 +57,8 @@ async function transformImages(fileNames, options, formats) {
  * @param {(keyof sharp.FormatEnum)[]} formats
  */
 async function transformImage(filePath, outDir, options, formats) {
-	const hash = crypto.randomUUID()
+	const hash = transformedIndex
+	transformedIndex++
 	/**@type {{hash:string,width:number,height:number}} */
 	let data = undefined
 	for await (const format of formats) {
@@ -70,7 +71,6 @@ async function transformImage(filePath, outDir, options, formats) {
 	}
 	return data
 }
-
 /**
  * @param {string[]} filePathes
  * @param {string} outDir
@@ -78,9 +78,11 @@ async function transformImage(filePath, outDir, options, formats) {
  * @returns
  */
 async function createPlaceHolders(filePathes, outDir) {
+	let index = 0
 	const hashes = []
 	for await (const filePath of filePathes) {
-		const hash = crypto.randomUUID()
+		index++
+		const hash = `${index}-placeholder`
 		const fileName = `${hash}.${'png'}`
 		await sharp(filePath)
 			.resize(400)
