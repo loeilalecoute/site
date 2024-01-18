@@ -1,4 +1,5 @@
 <script>
+	import FooterSpace from '$lib/components/FooterSpace.svelte'
 	import Title from '$lib/components/Title.svelte'
 </script>
 
@@ -173,3 +174,4 @@
 		</svg>
 	</aside>
 </div>
+<FooterSpace />
