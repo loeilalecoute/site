@@ -49,7 +49,7 @@
 				<source srcset="/portfolio/{hash}.webp" type="image/webp" />
 				<source srcset="/portfolio/{hash}.jpg" type="image/jpeg" />
 				<img
-					class="h-full w-full object-cover opacity-0 transition-opacity delay-100 duration-700 group-hover:opacity-100"
+					class="h-full w-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100"
 					src="/portfolio/{hash}.jpg"
 					alt="An alt text"
 					{width}
