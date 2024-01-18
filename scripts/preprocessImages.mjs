@@ -11,8 +11,8 @@ async function main() {
 	const miniaturesData = await transformImages(
 		fileNames,
 		{
-			width: 892,
-			height: 502,
+			width: 600,
+			height: 376,
 			fit: 'inside'
 		},
 		['jpg', 'webp']
@@ -85,7 +85,7 @@ async function createPlaceHolders(filePathes, outDir) {
 		const hash = `${index}-placeholder`
 		const fileName = `${hash}.${'png'}`
 		await sharp(filePath)
-			.resize(400)
+			.resize(350)
 			.png({ palette: true, colors: 4 })
 			.tint([126, 101, 3])
 			.toFile(path.join(outDir, fileName))
