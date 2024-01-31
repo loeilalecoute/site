@@ -14,7 +14,7 @@ La radio pour témoigner d’un territoire tout en nuances à travers son histoi
 
 Même si L’œil à l’écoute a déployé des actions par-delà le territoire de la Seine-Saint-Denis, ce site web propose un éclairage non exhaustif sur les contenus radiophoniques réalisés dans 26 des 40 communes qui composent le département le plus jeune mais aussi le plus pauvre de France métropolitaine.
 
-Afin de mettre en œuvre ses activités, l’œil à l’écoute c’est appuyé sur des professionnels de la radio et des journalistes sans qui l’association n’aurait pas pu transmettre sa pédagogie par le faire
+Afin de mettre en œuvre ses activités, l’œil à l’écoute s’est appuyé sur des professionnels de la radio et des journalistes sans qui l’association n’aurait pas pu transmettre sa pédagogie par le faire
 
 **« Témoigner, c’est une manière d’agir ! »**, c’est pourquoi Guillaume et Hervé remercient l’ensemble des personnes qui ont contribué à faire vibrer cet espace d’expression citoyen et populaire : les participant.e.s, les intervenant.e.s, Émily, Kréména, les partenaires associatifs et institutionnels, les collectivités territoriales et Radio Campus Paris.
 
@@ -22,7 +22,7 @@ Lien: <a href="https://syntone.fr/loeil-a-lecoute-12-ans-deducation-populaire-et
 
 ## Les actions
 
-L’association a pu travailler avec des publics variés (jeunes, retraités, mineurs isolés, détenus, personnes en situation de handicap, public scolaire…) dans le cadre d’interventions adaptées qui répondaient aux spécificités des sollicitations. Les principaux lieux d’interventions étaient les services municipaux, les centres socio-culturels, les MJC, les établissements scolaires, les maisons de retraite ou encore les locaux associatifs. L’enjeu était d’encourager l’autonomisation des participants pouvant aller jusqu’à la mise à disposition d’une mallette pédagogique incluant un kit de matériel et de ressources permettant d’élaborer du contenu radio sans l’intervention de l’association qui, par ailleurs, s’engageait à diffuser le contenu réalisé sur Radio Campus Paris.
+L’association a pu travailler avec des publics variés (jeunes, retraités, mineurs isolés, détenus, personnes en situation de handicap, public scolaire…) dans le cadre d’interventions adaptées qui répondait aux spécificités des sollicitations. Les principaux lieux d’interventions étaient les services municipaux, les centres socio-culturels, les MJC, les établissements scolaires, les maisons de retraite ou encore les locaux associatifs. L’enjeu était d’encourager l’autonomisation des participants pouvant aller jusqu’à la mise à disposition d’une mallette pédagogique incluant un kit de matériel et de ressources permettant d’élaborer du contenu radio sans l’intervention de l’association qui, par ailleurs, s’engageait à diffuser le contenu réalisé sur Radio Campus Paris.
 
 ### Le cycle d'initiation le plus populaire
 
