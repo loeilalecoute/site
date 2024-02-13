@@ -7,7 +7,7 @@ const OUTPUTDIR = 'static/portfolio'
 
 async function main() {
 	clearDir(OUTPUTDIR)
-	const fileNames = getAllImagesPathes(INPUTDIR).sort(() => 0.5 - Math.random())
+	const fileNames = getAllImagesPathes(INPUTDIR)
 	const miniaturesData = await transformImages(
 		fileNames,
 		{
@@ -117,8 +117,11 @@ async function clearDir(dir) {
  * @param {string} dir
  */
 function getAllImagesPathes(dir) {
-	const pathes = fs.readdirSync(dir)
-	return pathes.filter((p) => /\.(gif|jpe?g|tiff?|png|webp|bmp|svg|heic)$/i.test(p))
+	const pathes = fs
+		.readdirSync(dir)
+		.filter((p) => /\.(gif|jpe?g|tiff?|png|webp|bmp|svg|heic)$/i.test(p))
+		.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+	return pathes
 }
 
 main()
