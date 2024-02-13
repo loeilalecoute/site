@@ -1,5 +1,6 @@
 <script>
 	import { larges, mini, placeHolders } from '$lib/_imagesData.json'
+	import legends from '$lib/imgLegends.json'
 	import FooterSpace from '$lib/components/FooterSpace.svelte'
 	import { audioStore } from '$lib/stores/currentAudio'
 	import 'photoswipe/dist/photoswipe.css'
@@ -10,12 +11,54 @@
 	let zoomFactor = 0.5
 
 	function initLightBox() {
-		let lightbox = new PhotoSwipeLightbox({
+		const lightbox = new PhotoSwipeLightbox({
 			gallery: '#gallery',
 			children: 'a',
 			// showHideAnimationType: 'fade',
 			pswpModule: () => import('photoswipe')
 		})
+
+		lightbox.on('uiRegister', function () {
+			lightbox.pswp.ui.registerElement({
+				name: 'custom-caption',
+				order: 9,
+				isButton: false,
+				appendTo: 'root',
+				html: 'Caption text',
+				/** @param {HTMLElement} el*/
+				onInit: (el) => {
+					lightbox.pswp.on('change', () => {
+						const currSlideElement = lightbox.pswp.currSlide.data.element
+						let captionHTML = ''
+						if (currSlideElement) {
+							const hiddenCaption = currSlideElement.querySelector('[data-hidden-caption]')
+							if (hiddenCaption) {
+								// get caption from element with class hidden-caption-content
+								captionHTML = hiddenCaption.innerHTML
+							} else {
+								// get caption from alt attribute
+								captionHTML = currSlideElement.querySelector('img').getAttribute('alt')
+							}
+						}
+						el.innerHTML = captionHTML || ''
+						el.classList.add(
+							'absolute',
+							'left-1/2',
+							'border-gray-600/30',
+							'bg-gray-950/60',
+							'px-1',
+							'py-2',
+							'backdrop-blur-sm',
+							'bottom-8',
+							'-translate-x-1/2',
+							'text-gray-50',
+							'text-lg'
+						)
+					})
+				}
+			})
+		})
+
 		lightbox.init()
 	}
 
@@ -51,7 +94,7 @@
 				<img
 					class="h-full w-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100"
 					src="/portfolio/{hash}.jpg"
-					alt="An alt text"
+					alt={legends[index] ?? ''}
 					{width}
 					{height}
 					loading="lazy"
