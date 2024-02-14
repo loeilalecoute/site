@@ -44,15 +44,20 @@
 						el.classList.add(
 							'absolute',
 							'left-1/2',
+							'border',
 							'border-gray-600/30',
 							'bg-gray-950/60',
-							'px-1',
-							'py-2',
+							'px-2',
+							'py-4',
 							'backdrop-blur-sm',
 							'bottom-8',
 							'-translate-x-1/2',
 							'text-gray-50',
-							'text-lg'
+							'w-80',
+							'md:w-auto',
+							'md:text-lg',
+
+							'rounded-sm'
 						)
 					})
 				}
