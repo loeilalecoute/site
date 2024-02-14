@@ -1,38 +1,52 @@
-# create-svelte
+## Développement
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Le projet est basé sur le méta framework [sveltekit](https://kit.svelte.dev/)
 
-## Creating a project
+### Installation
 
-If you're seeing this, you've probably already done this step. Congrats!
+Avant de commencer le développement, assurez-vous d'avoir les outils suivants installés sur votre système :
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en) (inclut npm, le gestionnaire de paquets Node.js)
+
+**Cloner le dépôt :**
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+git clone https://github.com/loeilalecoute/site.git name-of-dir
 ```
 
-## Developing
+**Naviguer dans le dossier :**
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+cd name-of-dir
+```
+
+**Installer les dépendances :**
+
+```bash
+npm install
+```
+
+**Démarer le serveur de développement**
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+**Construire un livrable**
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+**Prévisualiser le livrable**
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+npm run preview
+```
+
+**Créer les images optimisées**
+
+```bash
+npm run preprocessImages
+```
