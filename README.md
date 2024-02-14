@@ -1,6 +1,8 @@
 ## Développement
 
-Le projet est basé sur le méta framework [sveltekit](https://kit.svelte.dev/)
+Le projet est basé sur le méta framework [sveltekit](https://kit.svelte.dev/).
+
+Le site est stylisé à l'aide de [tailwind](https://tailwindcss.com/).
 
 ### Installation
 
@@ -25,6 +27,13 @@ cd name-of-dir
 
 ```bash
 npm install
+```
+
+**Télécharger les fichiers audios**
+Depuis la racine du projet
+
+```bash
+sh scripts/downloadAudios.sh
 ```
 
 **Démarer le serveur de développement**
