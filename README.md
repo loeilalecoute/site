@@ -30,6 +30,9 @@ npm install
 ```
 
 **Télécharger les fichiers audios**
+
+Assurez-vous d'avoir wget installé sur votre machine
+
 Depuis la racine du projet
 
 ```bash
